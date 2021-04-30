@@ -3,6 +3,7 @@ package com.example.movies2look4
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import com.example.movies2look4.network.MoviesApiResponses
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,5 +17,8 @@ class MainActivity : AppCompatActivity() {
 //        val str3 = str2.substring(0, str2.length - 1)
 //        println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA nova string é $str2")
 //        texto.text = str3
+
+            val moviesApiResponses = MoviesApiResponses()
+            moviesApiResponses.getMoviesIds()
     }
 }
