@@ -1,8 +1,6 @@
 package com.example.movies2look4.network
 
-import android.util.Log
 import com.example.movies2look4.network.MoviesApiConnection.moviesApiService
-import org.intellij.lang.annotations.RegExp
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
