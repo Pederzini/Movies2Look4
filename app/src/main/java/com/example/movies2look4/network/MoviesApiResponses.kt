@@ -1,31 +1,36 @@
 package com.example.movies2look4.network
 
-import com.example.movies2look4.network.MoviesApiConnection.moviesApiService
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import com.example.movies2look4.network.MoviesApiConnection.buildMoviesApiService
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.schedulers.Schedulers
 
 class MoviesApiResponses {
 
     val moviesIdOnly = mutableListOf<String>()
+
     fun getMoviesIds() {
 
-        moviesApiService().getMoviesIds().enqueue(object : Callback<List<String>> {
-            override fun onFailure(call: Call<List<String>>, t: Throwable) {
-                print("Error retrieving data")
-            }
+        val compositeDisposable = CompositeDisposable()
+        compositeDisposable.add(
+            buildMoviesApiService().getMoviesIds()
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+                .subscribe({ response -> onResponse(response) }, { t -> onFailure(t) })
+        )
 
-            override fun onResponse(call: Call<List<String>>, response: Response<List<String>>) {
-                val pattern = "title|/".toRegex()
+    }
 
-                response.body()?.forEach {
-                    moviesIdOnly.add(it.replace(pattern, ""))
-                }
+    fun onFailure(t: Throwable) {
+        println(t.message)
+    }
 
-                println(moviesIdOnly.toString())
-            }
-        })
-
+    fun onResponse(response: List<String>) {
+        val pattern = "title|/".toRegex()
+        response.forEach {
+            moviesIdOnly.add(it.replace(pattern, ""))
+        }
+        println(moviesIdOnly.toString())
     }
 
 }
