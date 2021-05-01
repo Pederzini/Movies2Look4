@@ -1,19 +1,20 @@
 package com.example.movies2look4.network
 
+import android.util.Log
+import com.example.movies2look4.models.Movie
+import com.example.movies2look4.models.PopularMovies
 import com.example.movies2look4.network.MoviesApiConnection.buildMoviesApiService
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 
-class MoviesApiResponses {
+class MoviesApiResponseDetails {
 
-    val moviesIdOnly = mutableListOf<String>()
-
-    fun getMoviesIds() {
+    fun getMoviesDetails() {
 
         val compositeDisposable = CompositeDisposable()
         compositeDisposable.add(
-            buildMoviesApiService().getMoviesIds()
+            buildMoviesApiService().getMoviesDetails("tt10121392")
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .subscribe({ response -> onResponse(response) }, { t -> onFailure(t) })
@@ -25,12 +26,10 @@ class MoviesApiResponses {
         println(t.message)
     }
 
-    fun onResponse(response: List<String>) {
-        val pattern = "title|/".toRegex()
-        response.forEach {
-            moviesIdOnly.add(it.replace(pattern, ""))
-        }
-        println(moviesIdOnly.toString())
+    fun onResponse(response: Movie) {
+        println(response.toString())
+        println(response)
+        Log.e("AAAAAAAAAAAAAAAAAAA", response.toString())
     }
 
 }

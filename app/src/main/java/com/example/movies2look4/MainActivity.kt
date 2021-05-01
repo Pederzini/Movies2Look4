@@ -2,14 +2,17 @@ package com.example.movies2look4
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.movies2look4.network.MoviesApiResponses
+import com.example.movies2look4.network.MoviesApiResponseDetails
+import com.example.movies2look4.network.MoviesApiResponseId
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-            val moviesApiResponses = MoviesApiResponses()
-            moviesApiResponses.getMoviesIds()
+//            val moviesApiResponseId = MoviesApiResponseId()
+//            moviesApiResponseId.getMoviesIds()
+        val moviesApiResponseDetails = MoviesApiResponseDetails()
+        moviesApiResponseDetails.getMoviesDetails()
     }
 }

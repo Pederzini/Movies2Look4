@@ -1,5 +1,9 @@
 package com.example.movies2look4.models
 
+data class PopularMovies(
+    val movies: List<Movie>
+)
+
 data class Movie(
     val id: String? = null,
     val title: Title,
@@ -15,23 +19,23 @@ data class PlotOutline(
 )
 
 data class Ratings(
-    val rating: Long? = null,
-    val ratingCount: Long? = null,
-    val topRank: Long? = null
+    val rating: Double? = null,
+    val ratingCount: Int? = null
+//    val topRank: Int? = null
 )
 
 data class Title(
     val id: String? = null,
     val image: Image,
-    val runningTimeInMinutes: Long? = null,
+    val runningTimeInMinutes: Int? = null,
     val title: String? = null,
     val titleType: String? = null,
-    val year: Long? = null
+    val year: Int? = null
 )
 
 data class Image(
-    // val height: Long? = null,
+    // val height: Int? = null,
     val id: String? = null,
     val url: String? = null
-    // val width: Long
+    // val width: Int
 )
