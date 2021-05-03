@@ -8,9 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.movies2look4.R
-import com.example.movies2look4.models.Movie
 import com.example.movies2look4.models.MovieFewInfo
-import com.example.movies2look4.network.MoviesApiResponseDetails
 
 class MoviesGridAdapter(var moviesList: List<MovieFewInfo>) : RecyclerView.Adapter<MoviesGridAdapter.ViewHolder>() {
 
