@@ -8,9 +8,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.movies2look4.R
-import com.example.movies2look4.models.MovieFewInfo
+import com.example.movies2look4.models.Movie
+import com.example.movies2look4.network.IMG_BASE_URL
 
-class MoviesGridAdapter(var moviesList: List<MovieFewInfo>) : RecyclerView.Adapter<MoviesGridAdapter.ViewHolder>() {
+class MoviesGridAdapter(var moviesList: List<Movie>) : RecyclerView.Adapter<MoviesGridAdapter.ViewHolder>() {
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val movieTitle = view.findViewById<TextView>(R.id.movie_title)
@@ -30,15 +31,16 @@ class MoviesGridAdapter(var moviesList: List<MovieFewInfo>) : RecyclerView.Adapt
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val imgUrl = moviesList[position].title.image.url
+        val imagePath = moviesList[position].posterPath
+        val imgUrl = "${IMG_BASE_URL}${imagePath}"
         Glide.with(holder.itemView.context)
             .load(imgUrl)
             .into(holder.moviePoster)
 
-        holder.movieTitle.text = moviesList[position].title.title
+        holder.movieTitle.text = moviesList[position].title
 
         holder.itemView.setOnClickListener {
-            println(moviesList[position].title.title)
+            println(moviesList[position].title)
         }
     }
 

@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
 
         val recyclerView = findViewById<RecyclerView>(R.id.movies_grid)
         val moviesApiResponses = MoviesApiResponses()
-//        recyclerView.layoutManager = GridLayoutManager(this, 3)
-//        moviesApiResponses.getMoviesIds(recyclerView)
+        recyclerView.layoutManager = GridLayoutManager(this, 3)
+        moviesApiResponses.getMovies(recyclerView)
     }
 }
