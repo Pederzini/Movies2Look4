@@ -32,6 +32,8 @@ class MoviesApiResponseId {
             moviesIdOnly.add(it.replace(pattern, ""))
         }
         println(moviesIdOnly.toString())
+
+
     }
 
 }

@@ -1,41 +1,51 @@
 package com.example.movies2look4.models
 
-data class PopularMovies(
-    val movies: List<Movie>
+data class MovieFewInfo(
+    val id: String,
+    val title: TitleFew
+)
+
+data class TitleFew(
+    val title: String,
+    val image: ImageFew
+)
+
+data class ImageFew(
+    val url: String
 )
 
 data class Movie(
-    val id: String? = null,
+    val id: String,
     val title: Title,
     val ratings: Ratings,
-    val releaseDate: String? = null,
+    val releaseDate: String,
     val plotOutline: PlotOutline
 )
 
 data class PlotOutline(
-    val author: String? = null,
-    val id: String? = null,
-    val text: String? = null
+    val author: String,
+    val id: String,
+    val text: String
 )
 
 data class Ratings(
-    val rating: Double? = null,
-    val ratingCount: Int? = null
-//    val topRank: Int? = null
+    val rating: Double,
+    val ratingCount: Int
+//    val topRank: Int
 )
 
 data class Title(
-    val id: String? = null,
+    val id: String,
     val image: Image,
-    val runningTimeInMinutes: Int? = null,
-    val title: String? = null,
-    val titleType: String? = null,
-    val year: Int? = null
+    val runningTimeInMinutes: Int,
+    val title: String,
+    val titleType: String,
+    val year: Int
 )
 
 data class Image(
-    // val height: Int? = null,
-    val id: String? = null,
-    val url: String? = null
+    // val height: Int,
+    val id: String,
+    val url: String
     // val width: Int
 )
