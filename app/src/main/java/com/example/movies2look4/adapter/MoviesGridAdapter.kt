@@ -4,23 +4,18 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.movies2look4.R
 import com.example.movies2look4.models.Movie
 import com.example.movies2look4.network.IMG_BASE_URL
 import com.example.movies2look4.ui.MovieDetailActivity
+import kotlinx.android.synthetic.main.activity_movie_detail.view.*
 
 class MoviesGridAdapter(var moviesList: List<Movie>) :
     RecyclerView.Adapter<MoviesGridAdapter.ViewHolder>() {
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        val movieTitle = view.findViewById<TextView>(R.id.movie_title)
-        val moviePoster = view.findViewById<ImageView>(R.id.movie_poster)
-    }
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         // Create a new view, which defines the UI of the list item
@@ -39,9 +34,9 @@ class MoviesGridAdapter(var moviesList: List<Movie>) :
         val imgUrl = "${IMG_BASE_URL}${imagePath}"
         Glide.with(holder.itemView.context)
             .load(imgUrl)
-            .into(holder.moviePoster)
+            .into(holder.itemView.movie_poster)
 
-        holder.movieTitle.text = moviesList[position].title
+        holder.itemView.movie_title.text = moviesList[position].title
 
         holder.itemView.setOnClickListener {
             val intent = Intent(it.context, MovieDetailActivity::class.java)
