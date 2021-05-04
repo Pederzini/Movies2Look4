@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/movie_cover"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="@dimen/cover_height"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         android:src="@drawable/placeholder"
@@ -20,9 +20,9 @@
 
     <ImageView
         android:id="@+id/movie_poster"
-        android:layout_width="130dp"
-        android:layout_height="190dp"
-        android:layout_margin="16dp"
+        android:layout_width="@dimen/poster_width"
+        android:layout_height="@dimen/poster_height"
+        android:layout_margin="@dimen/space_medium"
         android:src="@drawable/placeholder"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/movie_cover" />
@@ -31,7 +31,7 @@
         android:id="@+id/movie_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="@dimen/space_medium"
         android:orientation="vertical"
         app:layout_constraintStart_toEndOf="@id/movie_poster"
         app:layout_constraintTop_toTopOf="@id/movie_poster">
@@ -40,51 +40,50 @@
             android:id="@+id/movie_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            tools:text="English Title:" />
+            android:text="@string/english_title"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/movie_title_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="@dimen/space_small"
             tools:text="Spirited Away" />
 
         <TextView
             android:id="@+id/original_movie_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            tools:text="Original title:" />
+            android:text="@string/original_title"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/original_movie_title_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="@dimen/space_small"
             tools:text="千と千尋の神隠し" />
 
         <TextView
             android:id="@+id/release_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
-            tools:text="Release date:" />
+            android:text="@string/release_date"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/release_date_value"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            tools:text="20-07-2001" />
+            android:layout_marginBottom="@dimen/space_small"
+            tools:text="2001-07-20" />
 
         <TextView
             android:id="@+id/rating"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAllCaps="true"
-            android:textStyle="bold"
-            tools:text="Rating" />
+            android:text="@string/rating"
+            android:textStyle="bold" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -101,13 +100,20 @@
                 android:id="@+id/rating_value"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="@dimen/space_smallest"
                 tools:text="8.5" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text=" / 10.0" />
+                android:text="@string/max_rating" />
+
+            <TextView
+                android:id="@+id/vote_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_small"
+                tools:text="(10000 votes)" />
 
         </LinearLayout>
 
@@ -117,22 +123,22 @@
         android:id="@+id/movie_overview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="@dimen/space_medium"
+        android:layout_marginTop="@dimen/space_large"
+        android:layout_marginEnd="@dimen/space_medium"
+        android:text="@string/movie_overview"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@id/movie_poster"
-        app:layout_constraintTop_toBottomOf="@id/movie_poster"
-        tools:text="Movie overview:" />
+        app:layout_constraintTop_toBottomOf="@id/movie_poster" />
 
     <TextView
         android:id="@+id/movie_overview_value"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintStart_toStartOf="@id/movie_overview"
+        android:layout_marginStart="@dimen/space_medium"
+        android:layout_marginTop="@dimen/space_small"
+        android:layout_marginEnd="@dimen/space_medium"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/movie_overview"
         tools:text="A young girl, Chihiro, becomes trapped in a strange new world of spirits. When her parents undergo a mysterious transformation, she must call upon the courage she never knew she had to free her family." />
 
