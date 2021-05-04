@@ -7,7 +7,6 @@ data class MoviesList(
 )
 
 data class Movie(
-    val adult: Boolean,
     @SerializedName("backdrop_path")
     val backdropPath: String,
     val id: Long,

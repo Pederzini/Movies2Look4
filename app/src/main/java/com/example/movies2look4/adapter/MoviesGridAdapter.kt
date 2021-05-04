@@ -1,5 +1,6 @@
 package com.example.movies2look4.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,7 @@ import com.bumptech.glide.Glide
 import com.example.movies2look4.R
 import com.example.movies2look4.models.Movie
 import com.example.movies2look4.network.IMG_BASE_URL
+import com.example.movies2look4.ui.MainActivity
 
 class MoviesGridAdapter(var moviesList: List<Movie>) : RecyclerView.Adapter<MoviesGridAdapter.ViewHolder>() {
 
@@ -40,6 +42,11 @@ class MoviesGridAdapter(var moviesList: List<Movie>) : RecyclerView.Adapter<Movi
         holder.movieTitle.text = moviesList[position].title
 
         holder.itemView.setOnClickListener {
+            Intent(it.context, MainActivity::class.java).apply {
+                putExtra("coverUrl", "${IMG_BASE_URL}${moviesList[position].backdropPath}")
+                putExtra("imageUrl", imgUrl)
+                putExtra()
+            }
             println(moviesList[position].title)
         }
     }
