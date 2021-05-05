@@ -127,6 +127,7 @@
         android:layout_marginTop="@dimen/space_large"
         android:layout_marginEnd="@dimen/space_medium"
         android:text="@string/movie_overview"
+        android:textAlignment="viewStart"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@id/movie_poster"
         app:layout_constraintTop_toBottomOf="@id/movie_poster" />
@@ -138,6 +139,7 @@
         android:layout_marginStart="@dimen/space_medium"
         android:layout_marginTop="@dimen/space_small"
         android:layout_marginEnd="@dimen/space_medium"
+        android:textAlignment="viewStart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/movie_overview"
         tools:text="A young girl, Chihiro, becomes trapped in a strange new world of spirits. When her parents undergo a mysterious transformation, she must call upon the courage she never knew she had to free her family." />

@@ -35,6 +35,7 @@
             android:maxLines="1"
             android:padding="@dimen/space_small"
             android:scrollHorizontally="true"
+            android:textAlignment="viewStart"
             android:textColor="@color/gray"
             android:textSize="@dimen/movie_title_card"
             tools:text="Movie Title" />
