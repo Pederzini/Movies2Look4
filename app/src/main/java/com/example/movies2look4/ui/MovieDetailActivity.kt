@@ -17,6 +17,10 @@ class MovieDetailActivity : AppCompatActivity() {
         supportActionBar?.hide()
         fillMovieInfo()
 
+        fab.setOnClickListener {
+            onBackPressed()
+        }
+
     }
 
     fun fillMovieInfo() {
