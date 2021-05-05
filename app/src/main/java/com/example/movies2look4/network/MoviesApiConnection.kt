@@ -18,5 +18,4 @@ object MoviesApiConnection {
         .create(MoviesEndpoints::class.java)
 
     fun buildMoviesApiService(): MoviesEndpoints = retrofit
-
 }

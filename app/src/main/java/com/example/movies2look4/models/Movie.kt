@@ -1,11 +1,14 @@
 package com.example.movies2look4.models
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
 data class MoviesList(
     val results: List<Movie>
 )
 
+@Parcelize
 data class Movie(
     @SerializedName("backdrop_path")
     val backdropPath: String,
@@ -26,11 +29,5 @@ data class Movie(
     val voteAverage: Double,
     @SerializedName("vote_count")
     val voteCount: Long
-
-
-) {
-    override fun toString(): String {
-        return super.toString()
-    }
-}
+) : Parcelable
 
