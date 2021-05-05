@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.example.movies2look4.R
 import com.example.movies2look4.models.Movie
 import com.example.movies2look4.network.IMG_BASE_URL
@@ -34,6 +35,11 @@ class MoviesGridAdapter(var moviesList: List<Movie>) :
         val imgUrl = "${IMG_BASE_URL}${imagePath}"
         Glide.with(holder.itemView.context)
             .load(imgUrl)
+            .apply(
+                RequestOptions()
+                    .placeholder(R.drawable.loading_animation)
+                    .error(R.drawable.ic_broken_image)
+            )
             .into(holder.itemView.movie_poster)
 
         holder.itemView.movie_title.text = moviesList[position].title
