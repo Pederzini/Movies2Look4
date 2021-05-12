@@ -1,6 +1,6 @@
 package com.example.movies2look4.network
 
-import com.example.movies2look4.models.MoviesList
+import com.example.movies2look4.model.MoviesList
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Query

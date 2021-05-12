@@ -1,0 +1,74 @@
+[
+    {
+        "merged": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_movie_detail.xml.flat",
+        "source": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\src\\main\\res\\layout\\activity_movie_detail.xml"
+    },
+    {
+        "merged": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\build\\intermediates\\res\\merged\\debug\\drawable_placeholder.webp.flat",
+        "source": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\src\\main\\res\\drawable\\placeholder.webp"
+    },
+    {
+        "merged": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_loading_img.xml.flat",
+        "source": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\src\\main\\res\\drawable-v24\\loading_img.xml"
+    },
+    {
+        "merged": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_star.xml.flat",
+        "source": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\src\\main\\res\\drawable\\ic_star.xml"
+    },
+    {
+        "merged": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_broken_image.xml.flat",
+        "source": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\src\\main\\res\\drawable-v24\\ic_broken_image.xml"
+    },
+    {
+        "merged": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_arrow.xml.flat",
+        "source": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\src\\main\\res\\drawable\\ic_arrow.xml"
+    },
+    {
+        "merged": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_foreground.png.flat",
+        "source": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_foreground.png"
+    },
+    {
+        "merged": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_loading_animation.xml.flat",
+        "source": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\src\\main\\res\\drawable-v24\\loading_animation.xml"
+    },
+    {
+        "merged": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\build\\intermediates\\res\\merged\\debug\\layout_grid_item.xml.flat",
+        "source": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\src\\main\\res\\layout\\grid_item.xml"
+    }
+]

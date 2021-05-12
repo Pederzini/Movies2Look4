@@ -8,7 +8,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.movies2look4.R
 import com.example.movies2look4.extensions.toImageUrl
-import com.example.movies2look4.models.Movie
+import com.example.movies2look4.model.Movie
 import kotlinx.android.synthetic.main.activity_movie_detail.view.*
 
 class MoviesGridAdapter(

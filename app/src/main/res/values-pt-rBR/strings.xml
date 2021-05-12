@@ -5,6 +5,7 @@
     <string name="original_title">Título original:</string>
     <string name="release_date">Data de lançamento:</string>
     <string name="rating">Nota:</string>
-    <string name="movie_overview">Sinopse:</string>
     <string name="max_rating">" / 10.0"</string>
+    <string name="vote_count">(%1$s votos)</string>
+    <string name="movie_overview">Sinopse:</string>
 </resources>

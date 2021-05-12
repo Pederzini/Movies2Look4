@@ -1,0 +1,2 @@
+com/example/movies2look4/BuildConfig.java
+ com.example.movies2look4.BuildConfig
