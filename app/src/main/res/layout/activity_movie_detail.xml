@@ -7,6 +7,14 @@
     android:orientation="vertical"
     tools:context=".movie_details.MovieDetailActivity">
 
+    <ViewStub
+        android:id="@+id/movie_detail_error"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inflatedId="@+id/movie_error"
+        android:layout="@layout/activity_movie_detail_error"
+        android:visibility="gone" />
+
     <ImageView
         android:id="@+id/movie_cover"
         android:layout_width="match_parent"
@@ -133,6 +141,7 @@
         app:layout_constraintTop_toBottomOf="@id/movie_poster" />
 
     <ScrollView
+        android:id="@+id/scroll_movie_overview"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height_movie_overview"
         android:layout_marginStart="@dimen/space_medium"

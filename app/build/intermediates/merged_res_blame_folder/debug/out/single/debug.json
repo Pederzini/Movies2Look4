@@ -32,6 +32,10 @@
         "source": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\src\\main\\res\\drawable\\ic_star.xml"
     },
     {
+        "merged": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_movie_detail_error.xml.flat",
+        "source": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\src\\main\\res\\layout\\activity_movie_detail_error.xml"
+    },
+    {
         "merged": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_foreground.png.flat",
         "source": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
     },

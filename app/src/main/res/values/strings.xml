@@ -7,4 +7,9 @@
     <string name="max_rating">" / 10.0"</string>
     <string name="vote_count">(%1$s votes)</string>
     <string name="movie_overview">Movie overview:</string>
+    <string name="couldnt_fetch_movie_info_try_again_later">Couldn\'t fetch movie info. Try again later</string>
+    <string name="error_internet">Error: Service unavailable</string>
+    <string name="error_server">Error: Server not responding</string>
+    <string name="error_generic">Error: Can\'t connect to the internet</string>
+    <string name="error_app">Error: Application not responding</string>
 </resources>

@@ -10,6 +10,8 @@ interface MovieListContract {
 
         fun onResponseFailure(t: Throwable)
 
+        fun showError(id: Int)
+
     }
 
     interface Presenter {

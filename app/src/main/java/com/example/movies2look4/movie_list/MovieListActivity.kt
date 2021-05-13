@@ -2,6 +2,7 @@ package com.example.movies2look4.movie_list
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.movies2look4.R
@@ -9,8 +10,6 @@ import com.example.movies2look4.adapter.MoviesGridAdapter
 import com.example.movies2look4.model.Movie
 import com.example.movies2look4.movie_details.EXTRA_MOVIE
 import com.example.movies2look4.movie_details.MovieDetailActivity
-import com.example.movies2look4.network.MoviesApiResponses
-import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MovieListActivity : AppCompatActivity(), MovieListContract.View {
@@ -47,7 +46,7 @@ class MovieListActivity : AppCompatActivity(), MovieListContract.View {
     }
 
     override fun onResponseFailure(t: Throwable) {
-        TODO("Not yet implemented")
+        Toast.makeText(this, "NETWORK ERROR $t", Toast.LENGTH_SHORT).show()
         // snack bar
         // toast
         // esconder lista de filmes

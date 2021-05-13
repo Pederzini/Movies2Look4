@@ -1861,6 +1861,7 @@ int id exitUntilCollapsed 0x7f08009b
 int id expand_activities_button 0x7f08009c
 int id expanded_menu 0x7f08009d
 int id fab 0x7f08009e
+int id fab_movie_error 0x7f0801ab
 int id fade 0x7f08009f
 int id fill 0x7f0800a0
 int id fill_horizontal 0x7f0800a1
@@ -1941,6 +1942,8 @@ int id month_navigation_previous 0x7f0800eb
 int id month_title 0x7f0800ec
 int id motion_base 0x7f0800ed
 int id movie_cover 0x7f0800ee
+int id movie_detail_error 0x7f0801ac
+int id movie_error 0x7f0801ad
 int id movie_info 0x7f0800ef
 int id movie_overview 0x7f0800f0
 int id movie_overview_value 0x7f0800f1
@@ -2025,6 +2028,7 @@ int id scroll 0x7f08013f
 int id scrollIndicatorDown 0x7f080140
 int id scrollIndicatorUp 0x7f080141
 int id scrollView 0x7f080142
+int id scroll_movie_overview 0x7f0801ae
 int id scrollable 0x7f080143
 int id search_badge 0x7f080144
 int id search_bar 0x7f080145
@@ -2191,6 +2195,7 @@ int layout abc_select_dialog_material 0x7f0b001a
 int layout abc_tooltip 0x7f0b001b
 int layout activity_main 0x7f0b001c
 int layout activity_movie_detail 0x7f0b001d
+int layout activity_movie_detail_error 0x7f0b0071
 int layout custom_dialog 0x7f0b001e
 int layout design_bottom_navigation_item 0x7f0b001f
 int layout design_bottom_sheet_dialog 0x7f0b0020
@@ -2314,6 +2319,7 @@ int string character_counter_overflowed_content_description 0x7f0e0020
 int string character_counter_pattern 0x7f0e0021
 int string chip_text 0x7f0e0022
 int string clear_text_end_icon_content_description 0x7f0e0023
+int string couldnt_fetch_movie_info_try_again_later 0x7f0e006b
 int string english_title 0x7f0e0024
 int string error_icon_content_description 0x7f0e0025
 int string exposed_dropdown_menu_content_description 0x7f0e0026

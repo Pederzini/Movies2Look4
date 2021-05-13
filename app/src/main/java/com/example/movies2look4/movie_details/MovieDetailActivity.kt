@@ -9,6 +9,7 @@ import com.example.movies2look4.R
 import com.example.movies2look4.extensions.toImageUrl
 import com.example.movies2look4.model.Movie
 import kotlinx.android.synthetic.main.activity_movie_detail.*
+import kotlinx.android.synthetic.main.activity_movie_detail_error.*
 
 const val EXTRA_MOVIE = "movie"
 
@@ -25,9 +26,12 @@ class MovieDetailActivity : AppCompatActivity(), MovieDetailContract.View {
         supportActionBar?.hide()
         fillMovieInfo()
 
-        fab.setOnClickListener {
-            onBackPressed()
-        }
+        fab.setOnClickListener { onBackPressed() }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        movieDetailPresenter.onDestroy()
     }
 
     private fun fillMovieInfo() {
@@ -37,7 +41,27 @@ class MovieDetailActivity : AppCompatActivity(), MovieDetailContract.View {
         }
     }
 
+    override fun hideMovieInfo() {
+        // aplicar isso através do flipper
+        movie_cover.visibility = View.GONE
+        movie_poster.visibility = View.GONE
+        movie_info.visibility = View.GONE
+        movie_overview.visibility = View.GONE
+        scroll_movie_overview.visibility = View.GONE
+        fab.visibility = View.GONE
+        movie_detail_error.visibility = View.VISIBLE
+        fab_movie_error.setOnClickListener { onBackPressed() }
+    }
+
     override fun showMovieInfo(movie: Movie) {
+        movie_cover.visibility = View.VISIBLE
+        movie_poster.visibility = View.VISIBLE
+        movie_info.visibility = View.VISIBLE
+        movie_overview.visibility = View.VISIBLE
+        scroll_movie_overview.visibility = View.VISIBLE
+        fab.visibility = View.VISIBLE
+        movie_detail_error.visibility = View.GONE
+
         Glide.with(this)
             .load(movie.backdropPath.toImageUrl())
             .apply(

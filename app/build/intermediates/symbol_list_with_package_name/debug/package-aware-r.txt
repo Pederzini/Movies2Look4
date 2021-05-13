@@ -1862,6 +1862,7 @@ id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
 id fab
+id fab_movie_error
 id fade
 id fill
 id fill_horizontal
@@ -1942,6 +1943,8 @@ id month_navigation_previous
 id month_title
 id motion_base
 id movie_cover
+id movie_detail_error
+id movie_error
 id movie_info
 id movie_overview
 id movie_overview_value
@@ -2026,6 +2029,7 @@ id scroll
 id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
+id scroll_movie_overview
 id scrollable
 id search_badge
 id search_bar
@@ -2192,6 +2196,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
 layout activity_movie_detail
+layout activity_movie_detail_error
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -2315,6 +2320,7 @@ string character_counter_overflowed_content_description
 string character_counter_pattern
 string chip_text
 string clear_text_end_icon_content_description
+string couldnt_fetch_movie_info_try_again_later
 string english_title
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
