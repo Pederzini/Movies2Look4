@@ -6,33 +6,33 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_movie_error"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="start|top"
-        android:layout_margin="16dp"
-        android:backgroundTint="@color/purple_500"
-        android:src="@drawable/ic_arrow"
-        app:borderWidth="0dp"
-        app:fabSize="mini"
-        app:tint="@color/white" />
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/fab_movie_error"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="start|top"-->
+<!--        android:layout_margin="16dp"-->
+<!--        android:backgroundTint="@color/purple_500"-->
+<!--        android:src="@drawable/ic_arrow"-->
+<!--        app:borderWidth="0dp"-->
+<!--        app:fabSize="mini"-->
+<!--        app:tint="@color/white" />-->
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/space_large"
-        android:text="@string/couldnt_fetch_movie_info_try_again_later"
-        android:textAlignment="center"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        tools:text="Couldn't fetch movie info. Try again later" />
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_margin="@dimen/space_large"-->
+<!--        android:text="@string/couldnt_fetch_movie_info_try_again_later"-->
+<!--        android:textAlignment="center"-->
+<!--        android:textSize="30sp"-->
+<!--        android:textStyle="bold"-->
+<!--        tools:text="Couldn't fetch movie info. Try again later" />-->
 
-    <ImageView
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:layout_gravity="center"
-        android:src="@drawable/ic_broken_image" />
+<!--    <ImageView-->
+<!--        android:layout_width="250dp"-->
+<!--        android:layout_height="250dp"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:src="@drawable/ic_broken_image" />-->
 
 
 </LinearLayout>

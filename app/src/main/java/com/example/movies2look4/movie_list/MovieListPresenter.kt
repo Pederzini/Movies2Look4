@@ -28,19 +28,23 @@ class MovieListPresenter(
                     movieListView?.setDataToRecyclerView(response.results)
                 }
             },
-                { error ->
-                    when (error) {
-                        is IOException -> movieListView?.showError(R.string.error_internet)
-                        is HttpException -> {
-                            if (error.code() == 500) {
-                                movieListView?.showError(R.string.error_server) //ocultar botao try again
-                            } else {
-                                movieListView?.showError(R.string.error_generic)
-                            }
-                        }
-                        else -> movieListView?.showError(R.string.error_app)// podemos assumir q é um erro do app
-                    }
-                }
+                { error -> errorHandler(error) }
             ))
     }
+
+    override fun errorHandler(error: Throwable) {
+        when (error) {
+            is IOException -> movieListView?.showErrorTryAgain(R.string.error_internet)
+            is HttpException -> {
+                if (error.code() == 500) {
+                    movieListView?.showError(R.string.error_server) //ocultar botao try again
+                } else {
+                    movieListView?.showErrorTryAgain(R.string.error_generic)
+                }
+            }
+            else -> movieListView?.showError(R.string.error_app)// podemos assumir q é um erro do app
+        }
+    }
+
+
 }

@@ -2,6 +2,7 @@ package com.example.movies2look4.movie_details
 
 import android.os.Bundle
 import android.view.View
+import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -9,7 +10,6 @@ import com.example.movies2look4.R
 import com.example.movies2look4.extensions.toImageUrl
 import com.example.movies2look4.model.Movie
 import kotlinx.android.synthetic.main.activity_movie_detail.*
-import kotlinx.android.synthetic.main.activity_movie_detail_error.*
 
 const val EXTRA_MOVIE = "movie"
 
@@ -24,14 +24,22 @@ class MovieDetailActivity : AppCompatActivity(), MovieDetailContract.View {
         setContentView(R.layout.activity_movie_detail)
 
         supportActionBar?.hide()
+        setAnimations()
         fillMovieInfo()
 
-        fab.setOnClickListener { onBackPressed() }
+        fab.setOnClickListener {
+            onBackPressed()
+        }
     }
 
     override fun onDestroy() {
         super.onDestroy()
         movieDetailPresenter.onDestroy()
+    }
+
+    private fun setAnimations() {
+        view_flipper.inAnimation = AnimationUtils.loadAnimation(this, R.anim.slide_in_right)
+        view_flipper.outAnimation = AnimationUtils.loadAnimation(this, R.anim.slide_out_left)
     }
 
     private fun fillMovieInfo() {
@@ -42,31 +50,20 @@ class MovieDetailActivity : AppCompatActivity(), MovieDetailContract.View {
     }
 
     override fun hideMovieInfo() {
-        // aplicar isso através do flipper
-        movie_cover.visibility = View.GONE
-        movie_poster.visibility = View.GONE
-        movie_info.visibility = View.GONE
-        movie_overview.visibility = View.GONE
-        scroll_movie_overview.visibility = View.GONE
-        fab.visibility = View.GONE
-        movie_detail_error.visibility = View.VISIBLE
-        fab_movie_error.setOnClickListener { onBackPressed() }
+        view_flipper.showNext()
+
+        fab_movie_error.setOnClickListener {
+            onBackPressed()
+        }
     }
 
     override fun showMovieInfo(movie: Movie) {
-        movie_cover.visibility = View.VISIBLE
-        movie_poster.visibility = View.VISIBLE
-        movie_info.visibility = View.VISIBLE
-        movie_overview.visibility = View.VISIBLE
-        scroll_movie_overview.visibility = View.VISIBLE
-        fab.visibility = View.VISIBLE
-        movie_detail_error.visibility = View.GONE
-
         Glide.with(this)
             .load(movie.backdropPath.toImageUrl())
             .apply(
                 RequestOptions()
                     .placeholder(R.drawable.loading_animation)
+                    .error(R.drawable.ic_broken_image)
             )
             .into(movie_cover)
 
@@ -75,6 +72,7 @@ class MovieDetailActivity : AppCompatActivity(), MovieDetailContract.View {
             .apply(
                 RequestOptions()
                     .placeholder(R.drawable.loading_animation)
+                    .error(R.drawable.placeholder)
             )
             .into(movie_poster)
 
@@ -86,19 +84,35 @@ class MovieDetailActivity : AppCompatActivity(), MovieDetailContract.View {
         movie_overview_value.text = movie.overview
     }
 
-    override fun hideMovieTitle() { movie_title_value.visibility = View.GONE }
+    override fun hideMovieTitle() {
+        movie_title_value.visibility = View.GONE
+    }
 
-    override fun hideMovieOriginalTitle() { original_movie_title_value.visibility = View.GONE }
+    override fun hideMovieOriginalTitle() {
+        original_movie_title_value.visibility = View.GONE
+    }
 
-    override fun hideMovieReleaseDate() { release_date_value.visibility = View.GONE }
+    override fun hideMovieReleaseDate() {
+        release_date_value.visibility = View.GONE
+    }
 
-    override fun hideMovieRating() { rating_value.visibility = View.GONE }
+    override fun hideMovieRating() {
+        rating_value.visibility = View.GONE
+    }
 
-    override fun hideMovieVoteCount() { vote_count.visibility = View.GONE }
+    override fun hideMovieVoteCount() {
+        vote_count.visibility = View.GONE
+    }
 
-    override fun hideMovieOverview() { movie_overview_value.visibility = View.GONE }
+    override fun hideMovieOverview() {
+        movie_overview_value.visibility = View.GONE
+    }
 
-    override fun showMoviePosterPlaceholder() { movie_poster.setImageResource(R.drawable.placeholder) }
+    override fun showMoviePosterPlaceholder() {
+        movie_poster.setImageResource(R.drawable.placeholder)
+    }
 
-    override fun showMovieCoverPlaceholder() { movie_poster.setImageResource(R.drawable.ic_broken_image) }
+    override fun showMovieCoverPlaceholder() {
+        movie_poster.setImageResource(R.drawable.ic_broken_image)
+    }
 }

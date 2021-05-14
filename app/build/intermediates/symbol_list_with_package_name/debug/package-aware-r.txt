@@ -30,6 +30,8 @@ anim design_snackbar_out
 anim mtrl_bottom_sheet_slide_in
 anim mtrl_bottom_sheet_slide_out
 anim mtrl_card_lowers_interpolator
+anim slide_in_right
+anim slide_out_left
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
 animator design_fab_show_motion_spec
@@ -1293,6 +1295,8 @@ dimen design_tab_text_size_2line
 dimen design_textinput_caption_translate_y
 dimen disabled_alpha_material_dark
 dimen disabled_alpha_material_light
+dimen error_image_side
+dimen error_text_size
 dimen fastscroll_default_thickness
 dimen fastscroll_margin
 dimen fastscroll_minimum_range
@@ -1818,6 +1822,7 @@ id content
 id contentPanel
 id contiguous
 id coordinator
+id coordinator_layout
 id cos
 id counterclockwise
 id custom
@@ -1943,15 +1948,16 @@ id month_navigation_previous
 id month_title
 id motion_base
 id movie_cover
-id movie_detail_error
+id movie_details
 id movie_error
+id movie_error_main
 id movie_info
 id movie_overview
 id movie_overview_value
 id movie_poster
 id movie_title
 id movie_title_value
-id moviesGrid
+id movies_grid
 id mtrl_anchor_parent
 id mtrl_calendar_day_selector_frame
 id mtrl_calendar_days_of_week
@@ -2126,6 +2132,8 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id view_flipper
+id view_flipper_main
 id view_offset_helper
 id visible
 id vote_count
@@ -2321,8 +2329,13 @@ string character_counter_pattern
 string chip_text
 string clear_text_end_icon_content_description
 string couldnt_fetch_movie_info_try_again_later
+string couldnt_fetch_movies
 string english_title
+string error_app
+string error_generic
 string error_icon_content_description
+string error_internet
+string error_server
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior

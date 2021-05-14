@@ -5,21 +5,15 @@ import com.example.movies2look4.model.Movie
 interface MovieListContract {
 
     interface View {
-
         fun setDataToRecyclerView(moviesList: List<Movie>)
-
-        fun onResponseFailure(t: Throwable)
-
-        fun showError(id: Int)
-
+        fun showError(resourceId: Int)
+        fun showErrorTryAgain(resourceId: Int)
     }
 
     interface Presenter {
-
         fun onDestroy()
-
         fun requestDataFromServer()
-
+        fun errorHandler(error: Throwable)
     }
 
 }

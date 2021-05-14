@@ -9,9 +9,9 @@
     <string name="vote_count">(%1$s votos)</string>
     <string name="movie_overview">Sinopse:</string>
     <string name="couldnt_fetch_movie_info_try_again_later">Não foi possível buscar as informações do filme. Tente novamente mais tarde</string>
-    <string name="error_internet">Erro: Serviço indisponível</string>
+    <string name="couldnt_fetch_movies">Não foi possível buscar os filmes</string>
+    <string name="error_internet">Erro: Não foi possível conectar à Internet</string>
     <string name="error_server">Erro: Servidor não respondendo</string>
-    <string name="error_generic">Erro: Não é possível conectar à Internet</string>
+    <string name="error_generic">Erro: Serviço indisponível</string>
     <string name="error_app">Erro: Aplicativo não respondendo</string>
-
 </resources>

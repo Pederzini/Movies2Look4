@@ -4,6 +4,10 @@
         "source": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
+        "merged": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\build\\intermediates\\res\\merged\\debug\\anim_slide_out_left.xml.flat",
+        "source": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\src\\main\\res\\anim\\slide_out_left.xml"
+    },
+    {
         "merged": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_movie_detail.xml.flat",
         "source": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\src\\main\\res\\layout\\activity_movie_detail.xml"
     },
@@ -74,5 +78,9 @@
     {
         "merged": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\build\\intermediates\\res\\merged\\debug\\layout_grid_item.xml.flat",
         "source": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\src\\main\\res\\layout\\grid_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\build\\intermediates\\res\\merged\\debug\\anim_slide_in_right.xml.flat",
+        "source": "C:\\Users\\victor.pederzini\\Documents\\Movies2Look4\\app\\src\\main\\res\\anim\\slide_in_right.xml"
     }
 ]

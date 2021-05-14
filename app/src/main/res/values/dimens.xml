@@ -11,4 +11,6 @@
     <dimen name="margin_4dp">4dp</dimen>
     <dimen name="movie_title_card">12sp</dimen>
     <dimen name="height_movie_overview">150dp</dimen>
+    <dimen name="error_image_side">250dp</dimen>
+    <dimen name="error_text_size">30sp</dimen>
 </resources>
