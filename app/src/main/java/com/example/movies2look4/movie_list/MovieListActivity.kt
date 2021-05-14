@@ -12,7 +12,6 @@ import com.example.movies2look4.movie_details.EXTRA_MOVIE
 import com.example.movies2look4.movie_details.MovieDetailActivity
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_movie_detail.*
 
 class MovieListActivity : AppCompatActivity(), MovieListContract.View {
 
