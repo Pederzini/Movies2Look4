@@ -9,25 +9,25 @@ data class MoviesList(
 )
 
 @Parcelize
-data class Movie(
+data class Movie (
     @SerializedName("backdrop_path")
-    val backdropPath: String,
-    val id: Long,
+    val backdropPath: String?,
+    val id: Long?,
     @SerializedName("original_language")
-    val originalLanguage: String,
+    val originalLanguage: String?,
     @SerializedName("original_title")
-    val originalTitle: String,
-    val overview: String,
-    val popularity: Double,
+    val originalTitle: String?,
+    val overview: String?,
+    val popularity: Double?,
     @SerializedName("poster_path")
-    val posterPath: String,
+    val posterPath: String?,
     @SerializedName("release_date")
-    val releaseDate: String,
-    val title: String,
-    val video: Boolean,
+    val releaseDate: String?,
+    val title: String?,
+    val video: Boolean?,
     @SerializedName("vote_average")
-    val voteAverage: Double,
+    val voteAverage: Double?,
     @SerializedName("vote_count")
-    val voteCount: Long
+    val voteCount: Long?
 ) : Parcelable
 

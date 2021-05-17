@@ -59,7 +59,7 @@ class MovieDetailActivity : AppCompatActivity(), MovieDetailContract.View {
 
     override fun showMovieInfo(movie: Movie) {
         Glide.with(this)
-            .load(movie.backdropPath.toImageUrl())
+            .load(movie.backdropPath?.toImageUrl())
             .apply(
                 RequestOptions()
                     .placeholder(R.drawable.loading_animation)
@@ -68,7 +68,7 @@ class MovieDetailActivity : AppCompatActivity(), MovieDetailContract.View {
             .into(movie_cover)
 
         Glide.with(this)
-            .load(movie.posterPath.toImageUrl())
+            .load(movie.posterPath?.toImageUrl())
             .apply(
                 RequestOptions()
                     .placeholder(R.drawable.loading_animation)

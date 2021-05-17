@@ -7,14 +7,14 @@ class MovieDetailPresenter(private var movieDetailView: MovieDetailContract.View
     override fun checkMovie(movie: Movie?){
         if(movie != null) {
             when {
-                movie.title.isEmpty() -> movieDetailView?.hideMovieTitle()
-                movie.originalTitle.isEmpty() -> movieDetailView?.hideMovieOriginalTitle()
-                movie.releaseDate.isEmpty() -> movieDetailView?.hideMovieReleaseDate()
-                movie.voteAverage.isNaN() -> movieDetailView?.hideMovieRating()
+                movie.title.isNullOrEmpty() -> movieDetailView?.hideMovieTitle()
+                movie.originalTitle.isNullOrEmpty() -> movieDetailView?.hideMovieOriginalTitle()
+                movie.releaseDate.isNullOrEmpty() -> movieDetailView?.hideMovieReleaseDate()
+                movie.voteAverage == 0.0 -> movieDetailView?.hideMovieRating()
                 movie.voteCount == 0L -> movieDetailView?.hideMovieVoteCount()
-                movie.overview.isEmpty() -> movieDetailView?.hideMovieOverview()
-                movie.posterPath.isEmpty() -> movieDetailView?.showMoviePosterPlaceholder()
-                movie.backdropPath.isEmpty() -> movieDetailView?.showMovieCoverPlaceholder()
+                movie.overview.isNullOrEmpty() -> movieDetailView?.hideMovieOverview()
+                movie.posterPath.isNullOrEmpty() -> movieDetailView?.showMoviePosterPlaceholder()
+                movie.backdropPath.isNullOrEmpty() -> movieDetailView?.showMovieCoverPlaceholder()
                 else -> movieDetailView?.showMovieInfo(movie)
             }
         } else {

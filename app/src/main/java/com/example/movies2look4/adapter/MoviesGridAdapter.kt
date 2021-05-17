@@ -41,7 +41,7 @@ class MoviesGridAdapter(
             onMovieClickListener: (Movie) -> Unit
         ) {
             Glide.with(itemView.context)
-                .load(movie.posterPath.toImageUrl())
+                .load(movie.posterPath?.toImageUrl())
                 .apply(
                     RequestOptions()
                         .placeholder(R.drawable.loading_animation)
