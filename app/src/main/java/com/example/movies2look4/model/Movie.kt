@@ -9,7 +9,7 @@ data class MoviesList(
 )
 
 @Parcelize
-data class Movie (
+data class Movie(
     @SerializedName("backdrop_path")
     val backdropPath: String?,
     val id: Long?,

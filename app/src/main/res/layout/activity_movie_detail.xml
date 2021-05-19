@@ -5,7 +5,9 @@
     android:id="@+id/view_flipper"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".movie_details.MovieDetailActivity">
+    android:inAnimation="@android:anim/fade_in"
+    android:outAnimation="@android:anim/fade_out"
+    tools:context=".movieDetails.MovieDetailActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/movie_details"
@@ -53,6 +55,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/space_small"
+                android:ellipsize="end"
+                android:maxLines="1"
                 tools:text="Spirited Away" />
 
             <TextView
@@ -67,6 +71,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/space_small"
+                android:ellipsize="end"
+                android:maxLines="1"
                 tools:text="千と千尋の神隠し" />
 
             <TextView
@@ -161,7 +167,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end|bottom"
-            android:layout_margin="16dp"
+            android:layout_margin="@dimen/space_medium"
             android:backgroundTint="@color/purple_500"
             android:src="@drawable/ic_arrow"
             app:borderWidth="0dp"
@@ -183,7 +189,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="start|top"
-            android:layout_margin="16dp"
+            android:layout_margin="@dimen/space_medium"
             android:backgroundTint="@color/purple_500"
             android:src="@drawable/ic_arrow"
             app:borderWidth="0dp"

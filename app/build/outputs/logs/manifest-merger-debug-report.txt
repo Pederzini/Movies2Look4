@@ -91,14 +91,14 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\vi
 		ADDED from C:\Users\victor.pederzini\Documents\Movies2Look4\app\src\main\AndroidManifest.xml:8:9-35
 	android:theme
 		ADDED from C:\Users\victor.pederzini\Documents\Movies2Look4\app\src\main\AndroidManifest.xml:13:9-50
-activity#com.example.movies2look4.movie_details.MovieDetailActivity
-ADDED from C:\Users\victor.pederzini\Documents\Movies2Look4\app\src\main\AndroidManifest.xml:14:9-80
+activity#com.example.movies2look4.movieDetails.MovieDetailActivity
+ADDED from C:\Users\victor.pederzini\Documents\Movies2Look4\app\src\main\AndroidManifest.xml:14:9-79
 	android:name
-		ADDED from C:\Users\victor.pederzini\Documents\Movies2Look4\app\src\main\AndroidManifest.xml:14:19-68
-activity#com.example.movies2look4.movie_list.MovieListActivity
+		ADDED from C:\Users\victor.pederzini\Documents\Movies2Look4\app\src\main\AndroidManifest.xml:14:19-67
+activity#com.example.movies2look4.movies.MovieListActivity
 ADDED from C:\Users\victor.pederzini\Documents\Movies2Look4\app\src\main\AndroidManifest.xml:15:9-21:20
 	android:name
-		ADDED from C:\Users\victor.pederzini\Documents\Movies2Look4\app\src\main\AndroidManifest.xml:15:19-63
+		ADDED from C:\Users\victor.pederzini\Documents\Movies2Look4\app\src\main\AndroidManifest.xml:15:19-59
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
 ADDED from C:\Users\victor.pederzini\Documents\Movies2Look4\app\src\main\AndroidManifest.xml:16:13-20:29
 action#android.intent.action.MAIN

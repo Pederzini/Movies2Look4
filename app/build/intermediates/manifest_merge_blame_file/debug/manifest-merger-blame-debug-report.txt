@@ -29,25 +29,26 @@
 19-->C:\Users\victor.pederzini\Documents\Movies2Look4\app\src\main\AndroidManifest.xml:11:9-54
 20        android:supportsRtl="true"
 20-->C:\Users\victor.pederzini\Documents\Movies2Look4\app\src\main\AndroidManifest.xml:12:9-35
-21        android:theme="@style/Theme.Movies2Look4" >
-21-->C:\Users\victor.pederzini\Documents\Movies2Look4\app\src\main\AndroidManifest.xml:13:9-50
-22        <activity android:name="com.example.movies2look4.movie_details.MovieDetailActivity" />
-22-->C:\Users\victor.pederzini\Documents\Movies2Look4\app\src\main\AndroidManifest.xml:14:9-80
-22-->C:\Users\victor.pederzini\Documents\Movies2Look4\app\src\main\AndroidManifest.xml:14:19-68
-23        <activity android:name="com.example.movies2look4.movie_list.MovieListActivity" >
-23-->C:\Users\victor.pederzini\Documents\Movies2Look4\app\src\main\AndroidManifest.xml:15:9-21:20
-23-->C:\Users\victor.pederzini\Documents\Movies2Look4\app\src\main\AndroidManifest.xml:15:19-63
-24            <intent-filter>
-24-->C:\Users\victor.pederzini\Documents\Movies2Look4\app\src\main\AndroidManifest.xml:16:13-20:29
-25                <action android:name="android.intent.action.MAIN" />
-25-->C:\Users\victor.pederzini\Documents\Movies2Look4\app\src\main\AndroidManifest.xml:17:17-69
-25-->C:\Users\victor.pederzini\Documents\Movies2Look4\app\src\main\AndroidManifest.xml:17:25-66
-26
-27                <category android:name="android.intent.category.LAUNCHER" />
-27-->C:\Users\victor.pederzini\Documents\Movies2Look4\app\src\main\AndroidManifest.xml:19:17-77
-27-->C:\Users\victor.pederzini\Documents\Movies2Look4\app\src\main\AndroidManifest.xml:19:27-74
-28            </intent-filter>
-29        </activity>
-30    </application>
-31
-32</manifest>
+21        android:testOnly="true"
+22        android:theme="@style/Theme.Movies2Look4" >
+22-->C:\Users\victor.pederzini\Documents\Movies2Look4\app\src\main\AndroidManifest.xml:13:9-50
+23        <activity android:name="com.example.movies2look4.movieDetails.MovieDetailActivity" />
+23-->C:\Users\victor.pederzini\Documents\Movies2Look4\app\src\main\AndroidManifest.xml:14:9-79
+23-->C:\Users\victor.pederzini\Documents\Movies2Look4\app\src\main\AndroidManifest.xml:14:19-67
+24        <activity android:name="com.example.movies2look4.movies.MovieListActivity" >
+24-->C:\Users\victor.pederzini\Documents\Movies2Look4\app\src\main\AndroidManifest.xml:15:9-21:20
+24-->C:\Users\victor.pederzini\Documents\Movies2Look4\app\src\main\AndroidManifest.xml:15:19-59
+25            <intent-filter>
+25-->C:\Users\victor.pederzini\Documents\Movies2Look4\app\src\main\AndroidManifest.xml:16:13-20:29
+26                <action android:name="android.intent.action.MAIN" />
+26-->C:\Users\victor.pederzini\Documents\Movies2Look4\app\src\main\AndroidManifest.xml:17:17-69
+26-->C:\Users\victor.pederzini\Documents\Movies2Look4\app\src\main\AndroidManifest.xml:17:25-66
+27
+28                <category android:name="android.intent.category.LAUNCHER" />
+28-->C:\Users\victor.pederzini\Documents\Movies2Look4\app\src\main\AndroidManifest.xml:19:17-77
+28-->C:\Users\victor.pederzini\Documents\Movies2Look4\app\src\main\AndroidManifest.xml:19:27-74
+29            </intent-filter>
+30        </activity>
+31    </application>
+32
+33</manifest>

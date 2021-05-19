@@ -5,7 +5,15 @@
     android:id="@+id/view_flipper_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".movie_list.MovieListActivity">
+    android:inAnimation="@android:anim/fade_in"
+    android:outAnimation="@android:anim/fade_out"
+    tools:context=".movies.MovieListActivity">
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/coordinator_layout"

@@ -2010,6 +2010,7 @@ id percent
 id pin
 id position
 id postLayout
+id progress_bar
 id progress_circular
 id progress_horizontal
 id radio
