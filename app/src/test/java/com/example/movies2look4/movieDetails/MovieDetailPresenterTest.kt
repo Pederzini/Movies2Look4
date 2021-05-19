@@ -259,6 +259,7 @@ class MovieDetailPresenterTest {
 
         // When
         movieDetailPresenter.onDestroy()
+        movieDetailPresenter.checkMovie(exampleMovie)
 
         // Then
         verify(movieDetailView, never()).showMovieInfo(exampleMovie)
