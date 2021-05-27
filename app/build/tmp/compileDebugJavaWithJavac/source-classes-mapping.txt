@@ -1,7 +1,15 @@
+com/example/movies2look4/movieDetails/MovieDetailActivity_MembersInjector.java
+ com.example.movies2look4.movieDetails.MovieDetailActivity_MembersInjector
 com/example/movies2look4/di/modules/NetModule_ProvideGlideInstanceFactory.java
  com.example.movies2look4.di.modules.NetModule_ProvideGlideInstanceFactory
 com/example/movies2look4/BuildConfig.java
  com.example.movies2look4.BuildConfig
+com/example/movies2look4/movieDetails/MovieDetailPresenter_Factory.java
+ com.example.movies2look4.movieDetails.MovieDetailPresenter_Factory
+com/example/movies2look4/movieDetails/DaggerMovieDetailComponent.java
+ com.example.movies2look4.movieDetails.DaggerMovieDetailComponent
+ com.example.movies2look4.movieDetails.DaggerMovieDetailComponent$1
+ com.example.movies2look4.movieDetails.DaggerMovieDetailComponent$Builder
 com/example/movies2look4/di/scopes/ActivityScope.java
  com.example.movies2look4.di.scopes.ActivityScope
 com/example/movies2look4/movies/MovieListModule_ProvideMovieListViewFactory.java
@@ -18,6 +26,8 @@ com/example/movies2look4/di/modules/NetModule_ProvideRetrofitInstanceFactory.jav
  com.example.movies2look4.di.modules.NetModule_ProvideRetrofitInstanceFactory
 com/example/movies2look4/di/modules/NetModule_ProvideMoviesEndpointFactory.java
  com.example.movies2look4.di.modules.NetModule_ProvideMoviesEndpointFactory
+com/example/movies2look4/movieDetails/MovieDetailModule_ProvideMovieDetailViewFactory.java
+ com.example.movies2look4.movieDetails.MovieDetailModule_ProvideMovieDetailViewFactory
 com/example/movies2look4/di/modules/AppModule_ProvideApplicationContextFactory.java
  com.example.movies2look4.di.modules.AppModule_ProvideApplicationContextFactory
 com/example/movies2look4/movies/DaggerMovieListComponent.java
@@ -29,3 +39,5 @@ com/example/movies2look4/movies/MovieListModel_Factory.java
  com.example.movies2look4.movies.MovieListModel_Factory
 com/example/movies2look4/movies/MovieListPresenter_Factory.java
  com.example.movies2look4.movies.MovieListPresenter_Factory
+com/example/movies2look4/movieDetails/MovieDetailModule_ProvideMovieDetailPresenterFactory.java
+ com.example.movies2look4.movieDetails.MovieDetailModule_ProvideMovieDetailPresenterFactory

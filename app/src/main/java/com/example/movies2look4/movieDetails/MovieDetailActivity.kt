@@ -2,26 +2,27 @@ package com.example.movies2look4.movieDetails
 
 import android.os.Bundle
 import android.view.View
-import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.movies2look4.R
+import com.example.movies2look4.application.MyApplication
 import com.example.movies2look4.extensions.toImageUrl
 import com.example.movies2look4.model.Movie
 import kotlinx.android.synthetic.main.activity_movie_detail.*
+import javax.inject.Inject
 
 const val EXTRA_MOVIE = "movie"
 
 class MovieDetailActivity : AppCompatActivity(), MovieDetailContract.View {
 
-    private val movieDetailPresenter by lazy {
-        MovieDetailPresenter(this)
-    }
+    @Inject
+    lateinit var movieDetailPresenter: MovieDetailContract.Presenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_detail)
+        initDagger()
 
         supportActionBar?.hide()
         fillMovieInfo()
@@ -29,6 +30,14 @@ class MovieDetailActivity : AppCompatActivity(), MovieDetailContract.View {
         fab.setOnClickListener {
             onBackPressed()
         }
+    }
+
+    private fun initDagger() {
+        DaggerMovieDetailComponent.builder()
+            .appComponent((application as MyApplication).appComponent)
+            .movieDetailModule(MovieDetailModule(this))
+            .build()
+            .inject(this)
     }
 
     override fun onDestroy() {

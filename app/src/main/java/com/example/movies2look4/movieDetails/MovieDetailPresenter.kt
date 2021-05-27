@@ -1,8 +1,9 @@
 package com.example.movies2look4.movieDetails
 
 import com.example.movies2look4.model.Movie
+import javax.inject.Inject
 
-class MovieDetailPresenter(private var movieDetailView: MovieDetailContract.View?) :
+class MovieDetailPresenter @Inject constructor(private var movieDetailView: MovieDetailContract.View?) :
     MovieDetailContract.Presenter {
 
     override fun checkMovie(movie: Movie?) {

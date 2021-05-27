@@ -9,4 +9,5 @@ import dagger.Component
 interface MovieListComponent {
 
     fun inject(movieListActivity: MovieListActivity)
+
 }
