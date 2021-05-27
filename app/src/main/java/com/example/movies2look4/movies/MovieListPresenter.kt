@@ -6,8 +6,9 @@ import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import retrofit2.HttpException
 import java.io.IOException
+import javax.inject.Inject
 
-class MovieListPresenter(
+class MovieListPresenter @Inject constructor(
     private var movieListView: MovieListContract.View?,
     private val movieListModel: MovieListModel
 ) : MovieListContract.Presenter {

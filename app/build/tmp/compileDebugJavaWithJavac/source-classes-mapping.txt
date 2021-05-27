@@ -1,2 +1,31 @@
+com/example/movies2look4/di/modules/NetModule_ProvideGlideInstanceFactory.java
+ com.example.movies2look4.di.modules.NetModule_ProvideGlideInstanceFactory
 com/example/movies2look4/BuildConfig.java
  com.example.movies2look4.BuildConfig
+com/example/movies2look4/di/scopes/ActivityScope.java
+ com.example.movies2look4.di.scopes.ActivityScope
+com/example/movies2look4/movies/MovieListModule_ProvideMovieListViewFactory.java
+ com.example.movies2look4.movies.MovieListModule_ProvideMovieListViewFactory
+com/example/movies2look4/di/components/DaggerAppComponent.java
+ com.example.movies2look4.di.components.DaggerAppComponent
+ com.example.movies2look4.di.components.DaggerAppComponent$1
+ com.example.movies2look4.di.components.DaggerAppComponent$Builder
+com/example/movies2look4/movies/MovieListActivity_MembersInjector.java
+ com.example.movies2look4.movies.MovieListActivity_MembersInjector
+com/example/movies2look4/movies/MovieListModule_ProvideMovieListPresenterFactory.java
+ com.example.movies2look4.movies.MovieListModule_ProvideMovieListPresenterFactory
+com/example/movies2look4/di/modules/NetModule_ProvideRetrofitInstanceFactory.java
+ com.example.movies2look4.di.modules.NetModule_ProvideRetrofitInstanceFactory
+com/example/movies2look4/di/modules/NetModule_ProvideMoviesEndpointFactory.java
+ com.example.movies2look4.di.modules.NetModule_ProvideMoviesEndpointFactory
+com/example/movies2look4/di/modules/AppModule_ProvideApplicationContextFactory.java
+ com.example.movies2look4.di.modules.AppModule_ProvideApplicationContextFactory
+com/example/movies2look4/movies/DaggerMovieListComponent.java
+ com.example.movies2look4.movies.DaggerMovieListComponent
+ com.example.movies2look4.movies.DaggerMovieListComponent$1
+ com.example.movies2look4.movies.DaggerMovieListComponent$Builder
+ com.example.movies2look4.movies.DaggerMovieListComponent$com_example_movies2look4_di_components_AppComponent_moviesEndpoints
+com/example/movies2look4/movies/MovieListModel_Factory.java
+ com.example.movies2look4.movies.MovieListModel_Factory
+com/example/movies2look4/movies/MovieListPresenter_Factory.java
+ com.example.movies2look4.movies.MovieListPresenter_Factory
