@@ -1,10 +1,9 @@
 package com.example.movies2look4.movies
 
-import com.example.movies2look4.network.MoviesEndpoints
-import javax.inject.Inject
+import com.example.movies2look4.network.MoviesApiConnection
 
-class MovieListModel @Inject constructor(private val moviesEndpoints: MoviesEndpoints){
+class MovieListModel {
 
-    fun getMovieList() = moviesEndpoints.getTopRatedMovies()
+    fun getMovieList() = MoviesApiConnection.buildMoviesApiService().getTopRatedMovies()
 
 }

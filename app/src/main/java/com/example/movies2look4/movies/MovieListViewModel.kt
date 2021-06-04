@@ -1,32 +1,35 @@
 package com.example.movies2look4.movies
 
-import com.example.movies2look4.R
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import com.example.movies2look4.model.Movie
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
 import retrofit2.HttpException
 import java.io.IOException
-import javax.inject.Inject
 
-class MovieListPresenter @Inject constructor(
-    private var movieListView: MovieListContract.View?,
-    private val movieListModel: MovieListModel
-) : MovieListContract.Presenter {
+class MovieListViewModel : ViewModel() {
 
+    private val movieListModel = MovieListModel()
     private val compositeDisposable = CompositeDisposable()
 
-    override fun onDestroy() {
-        compositeDisposable.clear()
-        this.movieListView = null
-    }
+    private val stateApiResponse = MutableLiveData<List<Movie>>()
+    val viewStateApiResponse: LiveData<List<Movie>>
+        get() = stateApiResponse
 
-    override fun requestDataFromServer() {
+    private val stateApiError = MutableLiveData<Throwable>()
+    val viewStateApiError: LiveData<Throwable>
+        get() = stateApiError
+
+    fun requestDataFromServer() {
         compositeDisposable.add(movieListModel.getMovieList()
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeOn(Schedulers.io())
             .subscribe({ response ->
                 if (!response.results.isNullOrEmpty()) {
-                    movieListView?.setDataToRecyclerView(response.results)
+                    stateApiResponse.value = response.results
                 }
             },
                 { error -> handleError(error) }
@@ -35,17 +38,16 @@ class MovieListPresenter @Inject constructor(
 
     private fun handleError(error: Throwable) {
         when (error) {
-            is IOException -> movieListView?.showErrorTryAgain(R.string.error_internet)
+            is IOException -> stateApiError.value = error
             is HttpException -> {
                 if (error.code() == 500) {
-                    movieListView?.showError(R.string.error_server)
+                    stateApiError.value = error
                 } else {
-                    movieListView?.showErrorTryAgain(R.string.error_generic)
+                    stateApiError.value = error
                 }
             }
-            else -> movieListView?.showError(R.string.error_app)
+            else -> stateApiError.value = error
         }
     }
-
 
 }

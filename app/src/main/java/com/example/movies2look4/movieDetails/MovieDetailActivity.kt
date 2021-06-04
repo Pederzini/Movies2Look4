@@ -1,7 +1,6 @@
 package com.example.movies2look4.movieDetails
 
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -23,7 +22,6 @@ class MovieDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_detail)
-//        initDagger()
 
         supportActionBar?.hide()
         fillMovieInfo()
@@ -33,19 +31,12 @@ class MovieDetailActivity : AppCompatActivity() {
         }
     }
 
-//    private fun initDagger() {
-//        DaggerMovieDetailComponent.builder()
-//            .appComponent((application as MyApplication).appComponent)
-//            .movieDetailModule(MovieDetailModule(this))
-//            .build()
-//            .inject(this)
-//    }
-
     private fun fillMovieInfo() {
         intent.extras?.let {
             val movie = it.getParcelable<Movie>(EXTRA_MOVIE) as Movie
             movieDetailViewModel.checkMovie(movie)
-            movieDetailViewModel.viewStateMovie.observe(this, Observer { movieState ->
+            showMovieInfo(movie)
+            movieDetailViewModel.viewStateMovie.observe(this, { movieState ->
                 when (movieState) {
                     MovieDetailViewModel.MovieState.HideTitle -> hideMovieTitle()
                     MovieDetailViewModel.MovieState.HideMovieInfo -> hideMovieInfo()
@@ -55,7 +46,6 @@ class MovieDetailActivity : AppCompatActivity() {
                     MovieDetailViewModel.MovieState.HideMovieReleaseDate -> hideMovieReleaseDate()
                     MovieDetailViewModel.MovieState.HideMovieVoteCount -> hideMovieVoteCount()
                     MovieDetailViewModel.MovieState.ShowMovieCoverPlaceholder -> showMovieCoverPlaceholder()
-                    is MovieDetailViewModel.MovieState.ShowMovieInfo -> showMovieInfo(movie)
                     MovieDetailViewModel.MovieState.ShowMoviePosterPlaceholder -> showMoviePosterPlaceholder()
                 }
             })
@@ -98,27 +88,27 @@ class MovieDetailActivity : AppCompatActivity() {
     }
 
     private fun hideMovieTitle() {
-        movie_title_value.visibility = View.GONE
+        movie_title_value.text = "-"
     }
 
     private fun hideMovieOriginalTitle() {
-        original_movie_title_value.visibility = View.GONE
+        original_movie_title_value.text = "-"
     }
 
     private fun hideMovieReleaseDate() {
-        release_date_value.visibility = View.GONE
+        release_date_value.text = "-"
     }
 
     private fun hideMovieRating() {
-        rating_value.visibility = View.GONE
+        rating_value.text = "-"
     }
 
     private fun hideMovieVoteCount() {
-        vote_count.visibility = View.GONE
+        vote_count.text = "-"
     }
 
     private fun hideMovieOverview() {
-        movie_overview_value.visibility = View.GONE
+        movie_overview_value.text = "-"
     }
 
     private fun showMoviePosterPlaceholder() {

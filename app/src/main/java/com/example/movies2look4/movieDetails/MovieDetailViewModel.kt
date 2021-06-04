@@ -4,7 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.movies2look4.model.Movie
-import javax.inject.Inject
 
 class MovieDetailViewModel : ViewModel() {
 
@@ -26,7 +25,7 @@ class MovieDetailViewModel : ViewModel() {
         object ShowMoviePosterPlaceholder : MovieState()
         object ShowMovieCoverPlaceholder : MovieState()
         object HideMovieInfo : MovieState()
-        data class ShowMovieInfo(val movie: Movie) : MovieState()
+//        data class ShowMovieInfo(val movie: Movie) : MovieState()
     }
 
     private val stateMovie = MutableLiveData<MovieState>()
@@ -47,34 +46,7 @@ class MovieDetailViewModel : ViewModel() {
                 MovieState.ShowMoviePosterPlaceholder
             movie.backdropPath.isNullOrEmpty() -> stateMovie.value =
                 MovieState.ShowMovieCoverPlaceholder
-            else -> stateMovie.value = MovieState.ShowMovieInfo(movie)
         }
     }
-
-//    override fun onDestroy() {
-//        this.movieDetailView = null
-//    }
-
-//    interface MovieDetailContract {
-//
-//        interface View {
-//            fun hideMovieInfo()
-//            fun showMovieInfo(movie: Movie)
-//            fun hideMovieTitle()
-//            fun hideMovieOriginalTitle()
-//            fun hideMovieReleaseDate()
-//            fun hideMovieRating()
-//            fun hideMovieVoteCount()
-//            fun hideMovieOverview()
-//            fun showMoviePosterPlaceholder()
-//            fun showMovieCoverPlaceholder()
-//        }
-//
-//        interface Presenter {
-//            fun checkMovie(movie: Movie?)
-//            fun onDestroy()
-//        }
-//
-//    }
 
 }
