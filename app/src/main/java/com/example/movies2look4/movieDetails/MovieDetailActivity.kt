@@ -2,7 +2,6 @@ package com.example.movies2look4.movieDetails
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -15,9 +14,12 @@ const val EXTRA_MOVIE = "movie"
 
 class MovieDetailActivity : AppCompatActivity() {
 
-    private val movieDetailViewModel: MovieDetailViewModel by lazy {
-        ViewModelProvider(this).get(MovieDetailViewModel::class.java)
-    }
+    private lateinit var movie: Movie
+    private lateinit var movieDetailViewModel: MovieDetailViewModel
+
+//    private val movieDetailViewModel: MovieDetailViewModel by lazy {
+//        ViewModelProvider(this).get(MovieDetailViewModel::class.java)
+//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,20 +35,20 @@ class MovieDetailActivity : AppCompatActivity() {
 
     private fun fillMovieInfo() {
         intent.extras?.let {
-            val movie = it.getParcelable<Movie>(EXTRA_MOVIE) as Movie
-            movieDetailViewModel.checkMovie(movie)
+            movie = it.getParcelable<Movie>(EXTRA_MOVIE) as Movie
+            movieDetailViewModel = MovieDetailViewModel(movie)
             showMovieInfo(movie)
             movieDetailViewModel.viewStateMovie.observe(this, { movieState ->
                 when (movieState) {
-                    MovieDetailViewModel.MovieState.HideTitle -> hideMovieTitle()
-                    MovieDetailViewModel.MovieState.HideMovieInfo -> hideMovieInfo()
-                    MovieDetailViewModel.MovieState.HideMovieOriginalTitle -> hideMovieOriginalTitle()
-                    MovieDetailViewModel.MovieState.HideMovieOverview -> hideMovieOverview()
-                    MovieDetailViewModel.MovieState.HideMovieRating -> hideMovieRating()
-                    MovieDetailViewModel.MovieState.HideMovieReleaseDate -> hideMovieReleaseDate()
-                    MovieDetailViewModel.MovieState.HideMovieVoteCount -> hideMovieVoteCount()
-                    MovieDetailViewModel.MovieState.ShowMovieCoverPlaceholder -> showMovieCoverPlaceholder()
-                    MovieDetailViewModel.MovieState.ShowMoviePosterPlaceholder -> showMoviePosterPlaceholder()
+                    MovieDetailViewState.HideTitle -> hideMovieTitle()
+                    MovieDetailViewState.HideMovieInfo -> hideMovieInfo()
+                    MovieDetailViewState.HideMovieOriginalTitle -> hideMovieOriginalTitle()
+                    MovieDetailViewState.HideMovieOverview -> hideMovieOverview()
+                    MovieDetailViewState.HideMovieRating -> hideMovieRating()
+                    MovieDetailViewState.HideMovieReleaseDate -> hideMovieReleaseDate()
+                    MovieDetailViewState.HideMovieVoteCount -> hideMovieVoteCount()
+                    MovieDetailViewState.ShowMovieCoverPlaceholder -> showMovieCoverPlaceholder()
+                    MovieDetailViewState.ShowMoviePosterPlaceholder -> showMoviePosterPlaceholder()
                 }
             })
         }

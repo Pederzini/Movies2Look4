@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.movies2look4.model.Movie
 
-class MovieDetailViewModel : ViewModel() {
+class MovieDetailViewModel(private val movie: Movie?) : ViewModel() {
 
     // usar o sealed class com os objects para expor o estado para a tela
     // tipo .value = view state.hide
@@ -15,38 +15,32 @@ class MovieDetailViewModel : ViewModel() {
     // na resposta da api, não preciso usar sealed class. Só preciso expor o erro que foi retornado
     // pelo rxjava
 
-    sealed class MovieState {
-        object HideTitle : MovieState()
-        object HideMovieOriginalTitle : MovieState()
-        object HideMovieReleaseDate : MovieState()
-        object HideMovieRating : MovieState()
-        object HideMovieVoteCount : MovieState()
-        object HideMovieOverview : MovieState()
-        object ShowMoviePosterPlaceholder : MovieState()
-        object ShowMovieCoverPlaceholder : MovieState()
-        object HideMovieInfo : MovieState()
-//        data class ShowMovieInfo(val movie: Movie) : MovieState()
-    }
-
-    private val stateMovie = MutableLiveData<MovieState>()
-    val viewStateMovie: LiveData<MovieState>
+    private val stateMovie = MutableLiveData<MovieDetailViewState>()
+    val viewStateMovie: LiveData<MovieDetailViewState>
         get() = stateMovie
 
-    fun checkMovie(movie: Movie) {
-        when {
-            movie.title.isNullOrEmpty() -> stateMovie.value = MovieState.HideTitle
-            movie.originalTitle.isNullOrEmpty() -> stateMovie.value =
-                MovieState.HideMovieOriginalTitle
-            movie.releaseDate.isNullOrEmpty() -> stateMovie.value =
-                MovieState.HideMovieReleaseDate
-            movie.voteAverage == 0.0 -> stateMovie.value = MovieState.HideMovieRating
-            movie.voteCount == 0L -> stateMovie.value = MovieState.HideMovieVoteCount
-            movie.overview.isNullOrEmpty() -> stateMovie.value = MovieState.HideMovieOverview
-            movie.posterPath.isNullOrEmpty() -> stateMovie.value =
-                MovieState.ShowMoviePosterPlaceholder
-            movie.backdropPath.isNullOrEmpty() -> stateMovie.value =
-                MovieState.ShowMovieCoverPlaceholder
-        }
+    init {
+        checkMovie()
+    }
+
+    private fun checkMovie() {
+        if (movie != null) {
+            when {
+                movie.title.isNullOrEmpty() -> stateMovie.value = MovieDetailViewState.HideTitle
+                movie.originalTitle.isNullOrEmpty() -> stateMovie.value =
+                    MovieDetailViewState.HideMovieOriginalTitle
+                movie.releaseDate.isNullOrEmpty() -> stateMovie.value =
+                    MovieDetailViewState.HideMovieReleaseDate
+                movie.voteAverage == 0.0 -> stateMovie.value = MovieDetailViewState.HideMovieRating
+                movie.voteCount == 0L -> stateMovie.value = MovieDetailViewState.HideMovieVoteCount
+                movie.overview.isNullOrEmpty() -> stateMovie.value =
+                    MovieDetailViewState.HideMovieOverview
+                movie.posterPath.isNullOrEmpty() -> stateMovie.value =
+                    MovieDetailViewState.ShowMoviePosterPlaceholder
+                movie.backdropPath.isNullOrEmpty() -> stateMovie.value =
+                    MovieDetailViewState.ShowMovieCoverPlaceholder
+            }
+        } else stateMovie.value = MovieDetailViewState.HideMovieInfo
     }
 
 }

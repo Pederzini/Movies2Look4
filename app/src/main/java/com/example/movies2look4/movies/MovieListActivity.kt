@@ -3,7 +3,6 @@ package com.example.movies2look4.movies
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.movies2look4.R
@@ -13,8 +12,6 @@ import com.example.movies2look4.movieDetails.EXTRA_MOVIE
 import com.example.movies2look4.movieDetails.MovieDetailActivity
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
-import retrofit2.HttpException
-import java.io.IOException
 
 private const val FLIPPER_PROGRESS = 0
 private const val FLIPPER_CONTENT = 1
@@ -29,30 +26,20 @@ class MovieListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-         initUI()
+        initUI()
     }
 
     private fun initUI() {
         movies_grid.layoutManager = GridLayoutManager(this, 3)
 
-        movieListViewModel.requestDataFromServer()
-
-        movieListViewModel.viewStateApiError.observe(this, Observer { error ->
-            when (error) {
-                is IOException -> showErrorTryAgain(R.string.error_internet)
-                is HttpException -> {
-                    if (error.code() == 500) {
-                        showError(R.string.error_server)
-                    } else {
-                        showErrorTryAgain(R.string.error_generic)
-                    }
-                }
-                else -> showError(R.string.error_app)
+        movieListViewModel.viewStateApiResponse.observe(this, { response ->
+            when (response) {
+                is MovieListViewState.ErrorInternet -> showErrorTryAgain(response.errorMessage)
+                is MovieListViewState.ErrorServer -> showError(response.errorMessage)
+                is MovieListViewState.ErrorGeneric -> showErrorTryAgain(response.errorMessage)
+                is MovieListViewState.ErrorApp -> showError(response.errorMessage)
+                is MovieListViewState.Success -> setDataToRecyclerView(response.movieList)
             }
-        })
-
-        movieListViewModel.viewStateApiResponse.observe(this, Observer {
-            setDataToRecyclerView(it)
         })
     }
 
