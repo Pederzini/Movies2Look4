@@ -15,11 +15,9 @@ const val EXTRA_MOVIE = "movie"
 class MovieDetailActivity : AppCompatActivity() {
 
     private lateinit var movie: Movie
-    private lateinit var movieDetailViewModel: MovieDetailViewModel
-
-//    private val movieDetailViewModel: MovieDetailViewModel by lazy {
-//        ViewModelProvider(this).get(MovieDetailViewModel::class.java)
-//    }
+    private val movieDetailViewModel: MovieDetailViewModel by lazy {
+        ViewModelProvider(this, MovieDetailViewModelFactory(movie)).get(MovieDetailViewModel::class.java)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,7 +34,6 @@ class MovieDetailActivity : AppCompatActivity() {
     private fun fillMovieInfo() {
         intent.extras?.let {
             movie = it.getParcelable<Movie>(EXTRA_MOVIE) as Movie
-            movieDetailViewModel = MovieDetailViewModel(movie)
             showMovieInfo(movie)
             movieDetailViewModel.viewStateMovie.observe(this, { movieState ->
                 when (movieState) {
