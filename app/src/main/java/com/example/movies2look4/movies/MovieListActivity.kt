@@ -7,11 +7,18 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.movies2look4.R
 import com.example.movies2look4.adapter.MoviesGridAdapter
+import com.example.movies2look4.di.movieListViewModelModule
+import com.example.movies2look4.di.netModule
 import com.example.movies2look4.model.Movie
 import com.example.movies2look4.movieDetails.EXTRA_MOVIE
 import com.example.movies2look4.movieDetails.MovieDetailActivity
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
+import org.koin.android.ext.koin.androidContext
+import org.koin.android.ext.koin.androidLogger
+import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.core.context.startKoin
+import org.koin.core.logger.Level
 
 private const val FLIPPER_PROGRESS = 0
 private const val FLIPPER_CONTENT = 1
@@ -19,13 +26,19 @@ private const val FLIPPER_ERROR = 2
 
 class MovieListActivity : AppCompatActivity() {
 
-    private val movieListViewModel: MovieListViewModel by lazy {
-        ViewModelProvider(this).get(MovieListViewModel::class.java)
-    }
+    private val movieListViewModel by viewModel<MovieListViewModel>()
+//    private val movieListViewModel: MovieListViewModel by lazy {
+//        ViewModelProvider(this).get(MovieListViewModel::class.java)
+//    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        startKoin {
+            androidContext(this@MovieListActivity)
+            androidLogger(Level.DEBUG)
+            modules(listOf(movieListViewModelModule, netModule))
+        }
         initUI()
     }
 
