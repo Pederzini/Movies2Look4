@@ -7,14 +7,6 @@ import com.example.movies2look4.model.Movie
 
 class MovieDetailViewModel(private val movie: Movie?) : ViewModel() {
 
-    // usar o sealed class com os objects para expor o estado para a tela
-    // tipo .value = view state.hide
-    // regra de sealed class -> expor dados para uma view uso data class
-    // se for só um estado/msg, uso object
-    // não expor nullable, tem que tratar aqui
-    // na resposta da api, não preciso usar sealed class. Só preciso expor o erro que foi retornado
-    // pelo rxjava
-
     private val stateMovie = MutableLiveData<MovieDetailViewState>()
     val viewStateMovie: LiveData<MovieDetailViewState>
         get() = stateMovie

@@ -2,22 +2,21 @@ package com.example.movies2look4.movieDetails
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.movies2look4.R
 import com.example.movies2look4.extensions.toImageUrl
 import com.example.movies2look4.model.Movie
 import kotlinx.android.synthetic.main.activity_movie_detail.*
+import org.koin.android.ext.android.inject
+import org.koin.core.parameter.parametersOf
 
 const val EXTRA_MOVIE = "movie"
 
 class MovieDetailActivity : AppCompatActivity() {
 
     private lateinit var movie: Movie
-    private val movieDetailViewModel: MovieDetailViewModel by lazy {
-        ViewModelProvider(this, MovieDetailViewModelFactory(movie)).get(MovieDetailViewModel::class.java)
-    }
+    private val movieDetailViewModel by inject<MovieDetailViewModel> { parametersOf(movie) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

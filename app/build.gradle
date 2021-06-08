@@ -94,12 +94,6 @@ dependencies {
     implementation "io.insert-koin:koin-androidx-scope:2.0.1"
     // Koin AndroidX ViewModel features
     implementation "io.insert-koin:koin-androidx-viewmodel:2.0.1"
-    // Koin AndroidX Fragment features
-    implementation "io.insert-koin:koin-androidx-fragment:2.0.1"
-    // Koin AndroidX WorkManager
-    implementation "io.insert-koin:koin-androidx-workmanager:2.0.1"
-    // Koin AndroidX Jetpack Compose
-    implementation "io.insert-koin:koin-androidx-compose:2.0.1"
     // Koin AndroidX Experimental features
     implementation "io.insert-koin:koin-androidx-ext:2.0.1"
 
