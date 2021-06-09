@@ -33,19 +33,9 @@ class MovieDetailActivity : AppCompatActivity() {
     private fun fillMovieInfo() {
         intent.extras?.let {
             movie = it.getParcelable<Movie>(EXTRA_MOVIE) as Movie
-            showMovieInfo(movie)
             movieDetailViewModel.viewStateMovie.observe(this, { movieState ->
-                when (movieState) {
-                    MovieDetailsViewState.HideTitle -> hideMovieTitle()
-                    MovieDetailsViewState.HideMovieInfo -> hideMovieInfo()
-                    MovieDetailsViewState.HideMovieOriginalTitle -> hideMovieOriginalTitle()
-                    MovieDetailsViewState.HideMovieOverview -> hideMovieOverview()
-                    MovieDetailsViewState.HideMovieRating -> hideMovieRating()
-                    MovieDetailsViewState.HideMovieReleaseDate -> hideMovieReleaseDate()
-                    MovieDetailsViewState.HideMovieVoteCount -> hideMovieVoteCount()
-                    MovieDetailsViewState.ShowMovieCoverPlaceholder -> showMovieCoverPlaceholder()
-                    MovieDetailsViewState.ShowMoviePosterPlaceholder -> showMoviePosterPlaceholder()
-                }
+                if (movieState is MovieDetailsViewState.ShowMovieInfo) showMovieInfo(movieState.movie)
+                else hideMovieInfo()
             })
         }
     }
@@ -83,38 +73,6 @@ class MovieDetailActivity : AppCompatActivity() {
         rating_value.text = movie.voteAverage.toString()
         vote_count.text = getString(R.string.vote_count, movie.voteCount.toString())
         movie_overview_value.text = movie.overview
-    }
-
-    private fun hideMovieTitle() {
-        movie_title_value.text = "-"
-    }
-
-    private fun hideMovieOriginalTitle() {
-        original_movie_title_value.text = "-"
-    }
-
-    private fun hideMovieReleaseDate() {
-        release_date_value.text = "-"
-    }
-
-    private fun hideMovieRating() {
-        rating_value.text = "-"
-    }
-
-    private fun hideMovieVoteCount() {
-        vote_count.text = "-"
-    }
-
-    private fun hideMovieOverview() {
-        movie_overview_value.text = "-"
-    }
-
-    private fun showMoviePosterPlaceholder() {
-        movie_poster.setImageResource(R.drawable.placeholder)
-    }
-
-    private fun showMovieCoverPlaceholder() {
-        movie_poster.setImageResource(R.drawable.ic_broken_image)
     }
 
 }

@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.movies2look4.model.Movie
 
-class MovieDetailsViewModel(private val movie: Movie?) : ViewModel() {
+class MovieDetailsViewModel(private var movie: Movie?) : ViewModel() {
 
     private val stateMovie = MutableLiveData<MovieDetailsViewState>()
     val viewStateMovie: LiveData<MovieDetailsViewState>
@@ -16,23 +16,20 @@ class MovieDetailsViewModel(private val movie: Movie?) : ViewModel() {
     }
 
     private fun checkMovie() {
-        if (movie != null) {
-            when {
-                movie.title.isNullOrEmpty() -> stateMovie.value = MovieDetailsViewState.HideTitle
-                movie.originalTitle.isNullOrEmpty() -> stateMovie.value =
-                    MovieDetailsViewState.HideMovieOriginalTitle
-                movie.releaseDate.isNullOrEmpty() -> stateMovie.value =
-                    MovieDetailsViewState.HideMovieReleaseDate
-                movie.voteAverage == 0.0 -> stateMovie.value = MovieDetailsViewState.HideMovieRating
-                movie.voteCount == 0L -> stateMovie.value = MovieDetailsViewState.HideMovieVoteCount
-                movie.overview.isNullOrEmpty() -> stateMovie.value =
-                    MovieDetailsViewState.HideMovieOverview
-                movie.posterPath.isNullOrEmpty() -> stateMovie.value =
-                    MovieDetailsViewState.ShowMoviePosterPlaceholder
-                movie.backdropPath.isNullOrEmpty() -> stateMovie.value =
-                    MovieDetailsViewState.ShowMovieCoverPlaceholder
-            }
-        } else stateMovie.value = MovieDetailsViewState.HideMovieInfo
+        movie?.let { movie ->
+            if (movie.title.isNullOrEmpty()) movie.title = "-"
+            if (movie.originalTitle.isNullOrEmpty()) movie.originalTitle = "-"
+            if (movie.releaseDate.isNullOrEmpty()) movie.releaseDate = "-"
+            if (movie.voteAverage == null) movie.voteAverage = 0.0
+            if (movie.voteCount == null) movie.voteCount = 0L
+            if (movie.overview.isNullOrEmpty()) movie.overview = "-"
+            if (movie.posterPath.isNullOrEmpty()) movie.posterPath = "-"
+            if (movie.backdropPath.isNullOrEmpty()) movie.backdropPath = "-"
+
+            stateMovie.value = MovieDetailsViewState.ShowMovieInfo(movie)
+        }
+
+        if (movie == null) stateMovie.value = MovieDetailsViewState.HideMovieInfo
     }
 
 }

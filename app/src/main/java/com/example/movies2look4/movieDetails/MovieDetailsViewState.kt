@@ -1,13 +1,8 @@
 package com.example.movies2look4.movieDetails
 
+import com.example.movies2look4.model.Movie
+
 sealed class MovieDetailsViewState {
-    object HideTitle : MovieDetailsViewState()
-    object HideMovieOriginalTitle : MovieDetailsViewState()
-    object HideMovieReleaseDate : MovieDetailsViewState()
-    object HideMovieRating : MovieDetailsViewState()
-    object HideMovieVoteCount : MovieDetailsViewState()
-    object HideMovieOverview : MovieDetailsViewState()
-    object ShowMoviePosterPlaceholder : MovieDetailsViewState()
-    object ShowMovieCoverPlaceholder : MovieDetailsViewState()
+    data class ShowMovieInfo(val movie: Movie) : MovieDetailsViewState()
     object HideMovieInfo : MovieDetailsViewState()
 }
