@@ -4,6 +4,6 @@ import com.example.movies2look4.movies.MoviesViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
-val movieListViewModelModule = module {
+val moviesModule = module {
     viewModel { MoviesViewModel() }
 }

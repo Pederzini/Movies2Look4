@@ -1,8 +1,8 @@
 package com.example.movies2look4
 
 import android.app.Application
-import com.example.movies2look4.movieDetails.di.movieDetailViewModelModule
-import com.example.movies2look4.movies.di.movieListViewModelModule
+import com.example.movies2look4.movieDetails.di.movieDetailsModule
+import com.example.movies2look4.movies.di.moviesModule
 import com.example.movies2look4.network.di.interactorModule
 import com.example.movies2look4.network.di.netModule
 import org.koin.android.ext.koin.androidContext
@@ -19,8 +19,8 @@ class App : Application() {
             androidLogger(Level.DEBUG)
             modules(
                 listOf(
-                    movieListViewModelModule,
-                    movieDetailViewModelModule,
+                    moviesModule,
+                    movieDetailsModule,
                     netModule,
                     interactorModule
                 )

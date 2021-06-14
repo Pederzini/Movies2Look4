@@ -1,217 +1,223 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ViewFlipper xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/view_flipper"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:inAnimation="@android:anim/fade_in"
-    android:outAnimation="@android:anim/fade_out"
+    android:layout_height="match_parent"
     tools:context=".movieDetails.MovieDetailActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/movie_details"
+    <ViewFlipper
+        android:id="@+id/view_flipper"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:inAnimation="@android:anim/fade_in"
+        android:outAnimation="@android:anim/fade_out">
 
-        <ImageView
-            android:id="@+id/movie_cover"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/movie_details"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/cover_height"
-            android:adjustViewBounds="true"
-            android:scaleType="centerCrop"
-            android:src="@drawable/placeholder"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/movie_poster"
-            android:layout_width="@dimen/poster_width"
-            android:layout_height="@dimen/poster_height"
-            android:layout_margin="@dimen/space_medium"
-            android:src="@drawable/placeholder"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/movie_cover" />
+            <ImageView
+                android:id="@+id/movie_cover"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/cover_height"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/placeholder"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <LinearLayout
-            android:id="@+id/movie_info"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/space_medium"
-            android:orientation="vertical"
-            app:layout_constraintStart_toEndOf="@id/movie_poster"
-            app:layout_constraintTop_toTopOf="@id/movie_poster">
-
-            <TextView
-                android:id="@+id/movie_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/english_title"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/movie_title_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/space_small"
-                android:ellipsize="end"
-                android:maxLines="1"
-                tools:text="Spirited Away" />
-
-            <TextView
-                android:id="@+id/original_movie_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/original_title"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/original_movie_title_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/space_small"
-                android:ellipsize="end"
-                android:maxLines="1"
-                tools:text="千と千尋の神隠し" />
-
-            <TextView
-                android:id="@+id/release_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/release_date"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/release_date_value"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/space_small"
-                tools:text="2001-07-20" />
-
-            <TextView
-                android:id="@+id/rating"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/rating"
-                android:textStyle="bold" />
+            <ImageView
+                android:id="@+id/movie_poster"
+                android:layout_width="@dimen/poster_width"
+                android:layout_height="@dimen/poster_height"
+                android:layout_margin="@dimen/space_medium"
+                android:src="@drawable/placeholder"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/movie_cover" />
 
             <LinearLayout
+                android:id="@+id/movie_info"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_star" />
+                android:layout_marginStart="@dimen/space_medium"
+                android:orientation="vertical"
+                app:layout_constraintStart_toEndOf="@id/movie_poster"
+                app:layout_constraintTop_toTopOf="@id/movie_poster">
 
                 <TextView
-                    android:id="@+id/rating_value"
+                    android:id="@+id/movie_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/space_smallest"
-                    tools:text="8.5" />
+                    android:text="@string/english_title"
+                    android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/movie_title_value"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/max_rating" />
+                    android:layout_marginBottom="@dimen/space_small"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    tools:text="Spirited Away" />
 
                 <TextView
-                    android:id="@+id/vote_count"
+                    android:id="@+id/original_movie_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/space_small"
-                    tools:text="(10000 votes)" />
+                    android:text="@string/original_title"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/original_movie_title_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/space_small"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    tools:text="千と千尋の神隠し" />
+
+                <TextView
+                    android:id="@+id/release_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/release_date"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/release_date_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/space_small"
+                    tools:text="2001-07-20" />
+
+                <TextView
+                    android:id="@+id/rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/rating"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_star" />
+
+                    <TextView
+                        android:id="@+id/rating_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_smallest"
+                        tools:text="8.5" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/max_rating" />
+
+                    <TextView
+                        android:id="@+id/vote_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/space_small"
+                        tools:text="(10000 votes)" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/movie_overview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/space_medium"
-            android:layout_marginTop="@dimen/space_large"
-            android:layout_marginEnd="@dimen/space_medium"
-            android:text="@string/movie_overview"
-            android:textAlignment="viewStart"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@id/movie_poster"
-            app:layout_constraintTop_toBottomOf="@id/movie_poster" />
-
-        <ScrollView
-            android:id="@+id/scroll_movie_overview"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/height_movie_overview"
-            android:layout_marginStart="@dimen/space_medium"
-            android:layout_marginTop="@dimen/space_small"
-            android:layout_marginEnd="@dimen/space_medium"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/movie_overview">
-
             <TextView
-                android:id="@+id/movie_overview_value"
+                android:id="@+id/movie_overview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_medium"
+                android:layout_marginTop="@dimen/space_large"
+                android:layout_marginEnd="@dimen/space_medium"
+                android:text="@string/movie_overview"
                 android:textAlignment="viewStart"
-                tools:text="A young girl, Chihiro, becomes trapped in a strange new world of spirits. When her parents undergo a mysterious transformation, she must call upon the courage she never knew she had to free her family." />
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/movie_poster"
+                app:layout_constraintTop_toBottomOf="@id/movie_poster" />
 
-        </ScrollView>
+            <ScrollView
+                android:id="@+id/scroll_movie_overview"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height_movie_overview"
+                android:layout_marginStart="@dimen/space_medium"
+                android:layout_marginTop="@dimen/space_small"
+                android:layout_marginEnd="@dimen/space_medium"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/movie_overview">
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end|bottom"
-            android:layout_margin="@dimen/space_medium"
-            android:backgroundTint="@color/purple_500"
-            android:src="@drawable/ic_arrow"
-            app:borderWidth="0dp"
-            app:fabSize="mini"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/white" />
+                <TextView
+                    android:id="@+id/movie_overview_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="viewStart"
+                    tools:text="A young girl, Chihiro, becomes trapped in a strange new world of spirits. When her parents undergo a mysterious transformation, she must call upon the courage she never knew she had to free her family." />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            </ScrollView>
 
-    <LinearLayout
-        android:id="@+id/movie_error"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|bottom"
+                android:layout_margin="@dimen/space_medium"
+                android:backgroundTint="@color/purple_500"
+                android:src="@drawable/ic_arrow"
+                app:borderWidth="0dp"
+                app:fabSize="mini"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/white" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab_movie_error"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start|top"
-            android:layout_margin="@dimen/space_medium"
-            android:backgroundTint="@color/purple_500"
-            android:src="@drawable/ic_arrow"
-            app:borderWidth="0dp"
-            app:fabSize="mini"
-            app:tint="@color/white" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/movie_error"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/space_large"
-            android:text="@string/couldnt_fetch_movie_info_try_again_later"
-            android:textAlignment="center"
-            android:textSize="@dimen/error_text_size"
-            android:textStyle="bold"
-            tools:text="Couldn't fetch movie info. Try again later" />
+            android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="@dimen/error_image_side"
-            android:layout_height="@dimen/error_image_side"
-            android:layout_gravity="center"
-            android:src="@drawable/ic_broken_image" />
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fab_movie_error"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|top"
+                android:layout_margin="@dimen/space_medium"
+                android:backgroundTint="@color/purple_500"
+                android:src="@drawable/ic_arrow"
+                app:borderWidth="0dp"
+                app:fabSize="mini"
+                app:tint="@color/white" />
 
-    </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/space_large"
+                android:text="@string/couldnt_fetch_movie_info_try_again_later"
+                android:textAlignment="center"
+                android:textSize="@dimen/error_text_size"
+                android:textStyle="bold"
+                tools:text="Couldn't fetch movie info. Try again later" />
 
-</ViewFlipper>
+            <ImageView
+                android:layout_width="@dimen/error_image_side"
+                android:layout_height="@dimen/error_image_side"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_broken_image" />
+
+        </LinearLayout>
+
+    </ViewFlipper>
+
+</ScrollView>

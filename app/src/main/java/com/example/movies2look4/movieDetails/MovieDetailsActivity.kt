@@ -15,9 +15,14 @@ const val EXTRA_MOVIE = "movie"
 
 class MovieDetailActivity : AppCompatActivity() {
 
-    private lateinit var movie: Movie
-    private val movieDetailViewModel by inject<MovieDetailsViewModel> { parametersOf(movie) }
+    private val movieDetailViewModel by inject<MovieDetailsViewModel> {
+        parametersOf(
+            intent.extras?.let {
+                it.getParcelable<Movie>(EXTRA_MOVIE) as Movie
+            })
+    }
 
+    // function extension com generic
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_movie_detail)
@@ -31,13 +36,10 @@ class MovieDetailActivity : AppCompatActivity() {
     }
 
     private fun fillMovieInfo() {
-        intent.extras?.let {
-            movie = it.getParcelable<Movie>(EXTRA_MOVIE) as Movie
-            movieDetailViewModel.viewStateMovie.observe(this, { movieState ->
-                if (movieState is MovieDetailsViewState.ShowMovieInfo) showMovieInfo(movieState.movie)
-                else hideMovieInfo()
-            })
-        }
+        movieDetailViewModel.viewStateMovie.observe(this, { movieState ->
+            if (movieState is MovieDetailsViewState.ShowMovieInfo) showMovieInfo(movieState.movie)
+            else hideMovieInfo()
+        })
     }
 
     private fun hideMovieInfo() {

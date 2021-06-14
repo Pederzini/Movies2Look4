@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.movies2look4.model.Movie
 
-class MovieDetailsViewModel(private var movie: Movie?) : ViewModel() {
+class MovieDetailsViewModel(val movie: Movie?) : ViewModel() {
 
     private val stateMovie = MutableLiveData<MovieDetailsViewState>()
     val viewStateMovie: LiveData<MovieDetailsViewState>
@@ -16,7 +16,7 @@ class MovieDetailsViewModel(private var movie: Movie?) : ViewModel() {
     }
 
     private fun checkMovie() {
-        movie?.let { movie ->
+        if (movie != null) {
             if (movie.title.isNullOrEmpty()) movie.title = "-"
             if (movie.originalTitle.isNullOrEmpty()) movie.originalTitle = "-"
             if (movie.releaseDate.isNullOrEmpty()) movie.releaseDate = "-"
@@ -25,11 +25,8 @@ class MovieDetailsViewModel(private var movie: Movie?) : ViewModel() {
             if (movie.overview.isNullOrEmpty()) movie.overview = "-"
             if (movie.posterPath.isNullOrEmpty()) movie.posterPath = "-"
             if (movie.backdropPath.isNullOrEmpty()) movie.backdropPath = "-"
-
             stateMovie.value = MovieDetailsViewState.ShowMovieInfo(movie)
-        }
-
-        if (movie == null) stateMovie.value = MovieDetailsViewState.HideMovieInfo
+        } else stateMovie.value = MovieDetailsViewState.HideMovieInfo
     }
 
 }
