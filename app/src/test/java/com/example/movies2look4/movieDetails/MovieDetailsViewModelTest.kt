@@ -67,48 +67,47 @@ class MovieDetailsViewModelTest {
         ).isEqualTo(MovieDetailsViewState.ShowMovieInfo(movieResult))
     }
 
-//    @Test
-//    fun givenEmptyTitle_whenCheckingMovie_thenShowDefaultTitle() {
-//        // Given
-//        val movie = Movie(
-//            "/jdsaj1k.jpg",
-//            1875,
-//            "en",
-//            "Original Movie Title",
-//            "Overview",
-//            17.08,
-//            "/kd454j1k.jpg",
-//            "1995-12-20",
-//            "",
-//            false,
-//            9.2,
-//            164705L
-//        )
-//
-//        val movieResult = Movie(
-//            "/jdsaj1k.jpg",
-//            1875,
-//            "en",
-//            "Original Movie Title",
-//            "Overview",
-//            17.08,
-//            "/kd454j1k.jpg",
-//            "1995-12-20",
-//            "-",
-//            false,
-//            9.2,
-//            164705L
-//        )
-//
-//        // When
-//        val viewModel = MovieDetailsViewModel(movie)
-//
-//        // Then
-//        // Then
-//        assertThat(
-//            viewModel.viewStateMovie.value
-//        ).isEqualTo(MovieDetailsViewState.ShowMovieInfo(movieResult))
-//    }
+    @Test
+    fun givenEmptyTitle_whenCheckingMovie_thenShowDefaultTitle() {
+        // Given
+        val movie = Movie(
+            "/jdsaj1k.jpg",
+            1875,
+            "en",
+            "Original Movie Title",
+            "Overview",
+            17.08,
+            "/kd454j1k.jpg",
+            "1995-12-20",
+            "",
+            false,
+            9.2,
+            164705L
+        )
+
+        val movieResult = Movie(
+            "/jdsaj1k.jpg",
+            1875,
+            "en",
+            "Original Movie Title",
+            "Overview",
+            17.08,
+            "/kd454j1k.jpg",
+            "1995-12-20",
+            "-",
+            false,
+            9.2,
+            164705L
+        )
+
+        // When
+        val viewModel = MovieDetailsViewModel(movie)
+
+        // Then
+        assertThat(
+            viewModel.viewStateMovie.value
+        ).isEqualTo(MovieDetailsViewState.ShowMovieInfo(movieResult))
+    }
 
     @Test
     fun givenNullOriginalTitle_whenCheckingMovie_thenShowDefaultOriginalTitle() {
@@ -118,6 +117,48 @@ class MovieDetailsViewModelTest {
             1875,
             "en",
             null,
+            "Overview",
+            17.08,
+            "/kd454j1k.jpg",
+            "1995-12-20",
+            "Title",
+            false,
+            9.2,
+            164705L
+        )
+
+        val movieResult = Movie(
+            "/jdsaj1k.jpg",
+            1875,
+            "en",
+            "-",
+            "Overview",
+            17.08,
+            "/kd454j1k.jpg",
+            "1995-12-20",
+            "Title",
+            false,
+            9.2,
+            164705L
+        )
+
+        // When
+        val viewModel = MovieDetailsViewModel(movie)
+
+        // Then
+        assertThat(
+            viewModel.viewStateMovie.value
+        ).isEqualTo(MovieDetailsViewState.ShowMovieInfo(movieResult))
+    }
+
+    @Test
+    fun givenEmptyOriginalTitle_whenCheckingMovie_thenShowDefaultOriginalTitle() {
+        // Given
+        val movie = Movie(
+            "/jdsaj1k.jpg",
+            1875,
+            "en",
+            "",
             "Overview",
             17.08,
             "/kd454j1k.jpg",
@@ -164,6 +205,48 @@ class MovieDetailsViewModelTest {
             17.08,
             "/kd454j1k.jpg",
             null,
+            "Title",
+            false,
+            9.2,
+            164705L
+        )
+
+        val movieResult = Movie(
+            "/jdsaj1k.jpg",
+            1875,
+            "en",
+            "Original Movie Title",
+            "Overview",
+            17.08,
+            "/kd454j1k.jpg",
+            "-",
+            "Title",
+            false,
+            9.2,
+            164705L
+        )
+
+        // When
+        val viewModel = MovieDetailsViewModel(movie)
+
+        // Then
+        assertThat(
+            viewModel.viewStateMovie.value
+        ).isEqualTo(MovieDetailsViewState.ShowMovieInfo(movieResult))
+    }
+
+    @Test
+    fun givenEmptyReleaseDate_whenCheckingMovie_thenShowDefaultReleaseDate() {
+        // Given
+        val movie = Movie(
+            "/jdsaj1k.jpg",
+            1875,
+            "en",
+            "Original Movie Title",
+            "Overview",
+            17.08,
+            "/kd454j1k.jpg",
+            "",
             "Title",
             false,
             9.2,
@@ -321,6 +404,48 @@ class MovieDetailsViewModelTest {
     }
 
     @Test
+    fun givenEmptyOverview_whenCheckingMovie_thenShowDefaultOverview() {
+        // Given
+        val movie = Movie(
+            "/jdsaj1k.jpg",
+            1875,
+            "en",
+            "Original Movie Title",
+            "",
+            17.08,
+            "/kd454j1k.jpg",
+            "1995-12-20",
+            "Title",
+            false,
+            9.2,
+            164705L
+        )
+
+        val movieResult = Movie(
+            "/jdsaj1k.jpg",
+            1875,
+            "en",
+            "Original Movie Title",
+            "-",
+            17.08,
+            "/kd454j1k.jpg",
+            "1995-12-20",
+            "Title",
+            false,
+            9.2,
+            164705L
+        )
+
+        // When
+        val viewModel = MovieDetailsViewModel(movie)
+
+        // Then
+        assertThat(
+            viewModel.viewStateMovie.value
+        ).isEqualTo(MovieDetailsViewState.ShowMovieInfo(movieResult))
+    }
+
+    @Test
     fun givenNullPosterPath_whenCheckingMovie_thenShowDefaultPosterPath() {
         // Given
         val movie = Movie(
@@ -331,6 +456,48 @@ class MovieDetailsViewModelTest {
             "Overview",
             17.08,
             null,
+            "1995-12-20",
+            "Title",
+            false,
+            9.2,
+            164705L
+        )
+
+        val movieResult = Movie(
+            "/jdsaj1k.jpg",
+            1875,
+            "en",
+            "Original Movie Title",
+            "Overview",
+            17.08,
+            "-",
+            "1995-12-20",
+            "Title",
+            false,
+            9.2,
+            164705L
+        )
+
+        // When
+        val viewModel = MovieDetailsViewModel(movie)
+
+        // Then
+        assertThat(
+            viewModel.viewStateMovie.value
+        ).isEqualTo(MovieDetailsViewState.ShowMovieInfo(movieResult))
+    }
+
+    @Test
+    fun givenEmptyPosterPath_whenCheckingMovie_thenShowDefaultPosterPath() {
+        // Given
+        val movie = Movie(
+            "/jdsaj1k.jpg",
+            1875,
+            "en",
+            "Original Movie Title",
+            "Overview",
+            17.08,
+            "",
             "1995-12-20",
             "Title",
             false,
@@ -404,12 +571,46 @@ class MovieDetailsViewModelTest {
         ).isEqualTo(MovieDetailsViewState.ShowMovieInfo(movieResult))
     }
 
-//    if (movie.title.isNullOrEmpty()) movie.title = "-"
-//    if (movie.originalTitle.isNullOrEmpty()) movie.originalTitle = "-"
-//    if (movie.releaseDate.isNullOrEmpty()) movie.releaseDate = "-"
-//    if (movie.voteAverage == null) movie.voteAverage = 0.0
-//    if (movie.voteCount == null) movie.voteCount = 0L
-//    if (movie.overview.isNullOrEmpty()) movie.overview = "-"
-//    if (movie.posterPath.isNullOrEmpty()) movie.posterPath = "-"
-//    if (movie.backdropPath.isNullOrEmpty()) movie.backdropPath = "-"
+    @Test
+    fun givenEmptyBackdropPath_whenCheckingMovie_thenShowDefaultBackdropPath() {
+        // Given
+        val movie = Movie(
+            "",
+            1875,
+            "en",
+            "Original Movie Title",
+            "Overview",
+            17.08,
+            "/kd454j1k.jpg",
+            "1995-12-20",
+            "Title",
+            false,
+            9.2,
+            164705L
+        )
+
+        val movieResult = Movie(
+            "-",
+            1875,
+            "en",
+            "Original Movie Title",
+            "Overview",
+            17.08,
+            "/kd454j1k.jpg",
+            "1995-12-20",
+            "Title",
+            false,
+            9.2,
+            164705L
+        )
+
+        // When
+        val viewModel = MovieDetailsViewModel(movie)
+
+        // Then
+        assertThat(
+            viewModel.viewStateMovie.value
+        ).isEqualTo(MovieDetailsViewState.ShowMovieInfo(movieResult))
+    }
+
 }
