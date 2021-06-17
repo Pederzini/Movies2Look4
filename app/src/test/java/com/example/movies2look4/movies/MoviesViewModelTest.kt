@@ -43,9 +43,6 @@ class MoviesViewModelTest {
         164705L
     )
 
-    // fazer testes com null e empty
-    // listOf()
-    // fazer MoviesList aceitar nullable
     @Test
     fun givenMoviesList_whenDataIsRequestedFromServer_thenReturnASuccessState() {
         // Given

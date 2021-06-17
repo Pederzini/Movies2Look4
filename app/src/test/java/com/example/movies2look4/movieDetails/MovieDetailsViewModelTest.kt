@@ -93,7 +93,7 @@ class MovieDetailsViewModelTest {
             9.2,
             164705L
         )
-                // When
+        // When
         val viewModel = MovieDetailsViewModel(movie)
 
         // Then
