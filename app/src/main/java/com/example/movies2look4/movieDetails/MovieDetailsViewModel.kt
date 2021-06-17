@@ -15,6 +15,8 @@ class MovieDetailsViewModel(val movie: Movie?) : ViewModel() {
         checkMovie()
     }
 
+    // delegar o tratamento para um mapper
+    // mapper não atrelado à viewmodel, e sim ao interactor
     private fun checkMovie() {
         if (movie != null) {
             if (movie.title.isNullOrEmpty()) movie.title = "-"

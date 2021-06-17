@@ -7,14 +7,11 @@ import com.example.movies2look4.R
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.schedulers.Schedulers
-import org.koin.core.KoinComponent
-import org.koin.core.inject
 import retrofit2.HttpException
 import java.io.IOException
 
-class MoviesViewModel : ViewModel(), KoinComponent {
+class MoviesViewModel(private val moviesInteractor: MoviesInteractor) : ViewModel() {
 
-    private val moviesInteractor: MoviesInteractor by inject()
     private val compositeDisposable = CompositeDisposable()
 
     private val stateApiResponse = MutableLiveData<MoviesViewState>()
