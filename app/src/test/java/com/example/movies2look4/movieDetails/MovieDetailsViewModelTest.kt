@@ -2,17 +2,16 @@ package com.example.movies2look4.movieDetails
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.example.movies2look4.model.Movie
-import org.junit.Assert.*
+import com.google.common.truth.Truth.assertThat
 import org.junit.Rule
 import org.junit.Test
-import com.google.common.truth.Truth.assertThat
 
 class MovieDetailsViewModelTest {
     @get:Rule
     val instantTaskExecutorRule = InstantTaskExecutorRule()
 
     @Test
-    fun givenNullMovie_whenCheckingMovie_thenHideMovieInfo() {
+    fun givenNullMovie_whenCheckingMovie_thenReturnHideMovieInfoState() {
         // Given
         val movie = null
 
@@ -23,6 +22,33 @@ class MovieDetailsViewModelTest {
         assertThat(
             viewModel.viewStateMovie.value
         ).isEqualTo(MovieDetailsViewState.HideMovieInfo)
+    }
+
+    @Test
+    fun givenMovieNotNull_whenCheckingMovie_thenReturnSuccessState() {
+        // Given
+        val movie = Movie(
+            "/jdsaj1k.jpg",
+            1875,
+            "en",
+            null,
+            "Overview",
+            17.08,
+            "/kd454j1k.jpg",
+            "1995-12-20",
+            "Title",
+            false,
+            9.2,
+            164705L
+        )
+
+        // When
+        val viewModel = MovieDetailsViewModel(movie)
+
+        // Then
+        assertThat(
+            viewModel.viewStateMovie.value
+        ).isEqualTo(MovieDetailsViewState.ShowMovieInfo(movie))
     }
 
     @Test
@@ -43,28 +69,11 @@ class MovieDetailsViewModelTest {
             164705L
         )
 
-        val movieResult = Movie(
-            "/jdsaj1k.jpg",
-            1875,
-            "en",
-            "Original Movie Title",
-            "Overview",
-            17.08,
-            "/kd454j1k.jpg",
-            "1995-12-20",
-            "-",
-            false,
-            9.2,
-            164705L
-        )
-
         // When
         val viewModel = MovieDetailsViewModel(movie)
 
         // Then
-        assertThat(
-            viewModel.viewStateMovie.value
-        ).isEqualTo(MovieDetailsViewState.ShowMovieInfo(movieResult))
+        assertThat(movie.title).isEqualTo("-")
     }
 
     @Test
@@ -84,29 +93,11 @@ class MovieDetailsViewModelTest {
             9.2,
             164705L
         )
-
-        val movieResult = Movie(
-            "/jdsaj1k.jpg",
-            1875,
-            "en",
-            "Original Movie Title",
-            "Overview",
-            17.08,
-            "/kd454j1k.jpg",
-            "1995-12-20",
-            "-",
-            false,
-            9.2,
-            164705L
-        )
-
-        // When
+                // When
         val viewModel = MovieDetailsViewModel(movie)
 
         // Then
-        assertThat(
-            viewModel.viewStateMovie.value
-        ).isEqualTo(MovieDetailsViewState.ShowMovieInfo(movieResult))
+        assertThat(movie.title).isEqualTo("-")
     }
 
     @Test
@@ -126,29 +117,11 @@ class MovieDetailsViewModelTest {
             9.2,
             164705L
         )
-
-        val movieResult = Movie(
-            "/jdsaj1k.jpg",
-            1875,
-            "en",
-            "-",
-            "Overview",
-            17.08,
-            "/kd454j1k.jpg",
-            "1995-12-20",
-            "Title",
-            false,
-            9.2,
-            164705L
-        )
-
         // When
         val viewModel = MovieDetailsViewModel(movie)
 
         // Then
-        assertThat(
-            viewModel.viewStateMovie.value
-        ).isEqualTo(MovieDetailsViewState.ShowMovieInfo(movieResult))
+        assertThat(movie.originalTitle).isEqualTo("-")
     }
 
     @Test
@@ -168,29 +141,11 @@ class MovieDetailsViewModelTest {
             9.2,
             164705L
         )
-
-        val movieResult = Movie(
-            "/jdsaj1k.jpg",
-            1875,
-            "en",
-            "-",
-            "Overview",
-            17.08,
-            "/kd454j1k.jpg",
-            "1995-12-20",
-            "Title",
-            false,
-            9.2,
-            164705L
-        )
-
         // When
         val viewModel = MovieDetailsViewModel(movie)
 
         // Then
-        assertThat(
-            viewModel.viewStateMovie.value
-        ).isEqualTo(MovieDetailsViewState.ShowMovieInfo(movieResult))
+        assertThat(movie.originalTitle).isEqualTo("-")
     }
 
     @Test
@@ -210,29 +165,11 @@ class MovieDetailsViewModelTest {
             9.2,
             164705L
         )
-
-        val movieResult = Movie(
-            "/jdsaj1k.jpg",
-            1875,
-            "en",
-            "Original Movie Title",
-            "Overview",
-            17.08,
-            "/kd454j1k.jpg",
-            "-",
-            "Title",
-            false,
-            9.2,
-            164705L
-        )
-
         // When
         val viewModel = MovieDetailsViewModel(movie)
 
         // Then
-        assertThat(
-            viewModel.viewStateMovie.value
-        ).isEqualTo(MovieDetailsViewState.ShowMovieInfo(movieResult))
+        assertThat(movie.releaseDate).isEqualTo("-")
     }
 
     @Test
@@ -252,29 +189,11 @@ class MovieDetailsViewModelTest {
             9.2,
             164705L
         )
-
-        val movieResult = Movie(
-            "/jdsaj1k.jpg",
-            1875,
-            "en",
-            "Original Movie Title",
-            "Overview",
-            17.08,
-            "/kd454j1k.jpg",
-            "-",
-            "Title",
-            false,
-            9.2,
-            164705L
-        )
-
         // When
         val viewModel = MovieDetailsViewModel(movie)
 
         // Then
-        assertThat(
-            viewModel.viewStateMovie.value
-        ).isEqualTo(MovieDetailsViewState.ShowMovieInfo(movieResult))
+        assertThat(movie.releaseDate).isEqualTo("-")
     }
 
     @Test
@@ -294,29 +213,11 @@ class MovieDetailsViewModelTest {
             null,
             164705L
         )
-
-        val movieResult = Movie(
-            "/jdsaj1k.jpg",
-            1875,
-            "en",
-            "Original Movie Title",
-            "Overview",
-            17.08,
-            "/kd454j1k.jpg",
-            "1995-12-20",
-            "Title",
-            false,
-            0.0,
-            164705L
-        )
-
         // When
         val viewModel = MovieDetailsViewModel(movie)
 
         // Then
-        assertThat(
-            viewModel.viewStateMovie.value
-        ).isEqualTo(MovieDetailsViewState.ShowMovieInfo(movieResult))
+        assertThat(movie.voteAverage).isEqualTo(0.0)
     }
 
     @Test
@@ -336,29 +237,11 @@ class MovieDetailsViewModelTest {
             9.2,
             null
         )
-
-        val movieResult = Movie(
-            "/jdsaj1k.jpg",
-            1875,
-            "en",
-            "Original Movie Title",
-            "Overview",
-            17.08,
-            "/kd454j1k.jpg",
-            "1995-12-20",
-            "Title",
-            false,
-            9.2,
-            0L
-        )
-
         // When
         val viewModel = MovieDetailsViewModel(movie)
 
         // Then
-        assertThat(
-            viewModel.viewStateMovie.value
-        ).isEqualTo(MovieDetailsViewState.ShowMovieInfo(movieResult))
+        assertThat(movie.voteCount).isEqualTo(0L)
     }
 
     @Test
@@ -378,29 +261,11 @@ class MovieDetailsViewModelTest {
             9.2,
             164705L
         )
-
-        val movieResult = Movie(
-            "/jdsaj1k.jpg",
-            1875,
-            "en",
-            "Original Movie Title",
-            "-",
-            17.08,
-            "/kd454j1k.jpg",
-            "1995-12-20",
-            "Title",
-            false,
-            9.2,
-            164705L
-        )
-
         // When
         val viewModel = MovieDetailsViewModel(movie)
 
         // Then
-        assertThat(
-            viewModel.viewStateMovie.value
-        ).isEqualTo(MovieDetailsViewState.ShowMovieInfo(movieResult))
+        assertThat(movie.overview).isEqualTo("-")
     }
 
     @Test
@@ -420,29 +285,11 @@ class MovieDetailsViewModelTest {
             9.2,
             164705L
         )
-
-        val movieResult = Movie(
-            "/jdsaj1k.jpg",
-            1875,
-            "en",
-            "Original Movie Title",
-            "-",
-            17.08,
-            "/kd454j1k.jpg",
-            "1995-12-20",
-            "Title",
-            false,
-            9.2,
-            164705L
-        )
-
         // When
         val viewModel = MovieDetailsViewModel(movie)
 
         // Then
-        assertThat(
-            viewModel.viewStateMovie.value
-        ).isEqualTo(MovieDetailsViewState.ShowMovieInfo(movieResult))
+        assertThat(movie.overview).isEqualTo("-")
     }
 
     @Test
@@ -462,29 +309,11 @@ class MovieDetailsViewModelTest {
             9.2,
             164705L
         )
-
-        val movieResult = Movie(
-            "/jdsaj1k.jpg",
-            1875,
-            "en",
-            "Original Movie Title",
-            "Overview",
-            17.08,
-            "-",
-            "1995-12-20",
-            "Title",
-            false,
-            9.2,
-            164705L
-        )
-
         // When
         val viewModel = MovieDetailsViewModel(movie)
 
         // Then
-        assertThat(
-            viewModel.viewStateMovie.value
-        ).isEqualTo(MovieDetailsViewState.ShowMovieInfo(movieResult))
+        assertThat(movie.posterPath).isEqualTo("-")
     }
 
     @Test
@@ -504,29 +333,11 @@ class MovieDetailsViewModelTest {
             9.2,
             164705L
         )
-
-        val movieResult = Movie(
-            "/jdsaj1k.jpg",
-            1875,
-            "en",
-            "Original Movie Title",
-            "Overview",
-            17.08,
-            "-",
-            "1995-12-20",
-            "Title",
-            false,
-            9.2,
-            164705L
-        )
-
         // When
         val viewModel = MovieDetailsViewModel(movie)
 
         // Then
-        assertThat(
-            viewModel.viewStateMovie.value
-        ).isEqualTo(MovieDetailsViewState.ShowMovieInfo(movieResult))
+        assertThat(movie.posterPath).isEqualTo("-")
     }
 
     @Test
@@ -546,29 +357,11 @@ class MovieDetailsViewModelTest {
             9.2,
             164705L
         )
-
-        val movieResult = Movie(
-            "-",
-            1875,
-            "en",
-            "Original Movie Title",
-            "Overview",
-            17.08,
-            "/kd454j1k.jpg",
-            "1995-12-20",
-            "Title",
-            false,
-            9.2,
-            164705L
-        )
-
         // When
         val viewModel = MovieDetailsViewModel(movie)
 
         // Then
-        assertThat(
-            viewModel.viewStateMovie.value
-        ).isEqualTo(MovieDetailsViewState.ShowMovieInfo(movieResult))
+        assertThat(movie.backdropPath).isEqualTo("-")
     }
 
     @Test
@@ -588,29 +381,11 @@ class MovieDetailsViewModelTest {
             9.2,
             164705L
         )
-
-        val movieResult = Movie(
-            "-",
-            1875,
-            "en",
-            "Original Movie Title",
-            "Overview",
-            17.08,
-            "/kd454j1k.jpg",
-            "1995-12-20",
-            "Title",
-            false,
-            9.2,
-            164705L
-        )
-
         // When
         val viewModel = MovieDetailsViewModel(movie)
 
         // Then
-        assertThat(
-            viewModel.viewStateMovie.value
-        ).isEqualTo(MovieDetailsViewState.ShowMovieInfo(movieResult))
+        assertThat(movie.backdropPath).isEqualTo("-")
     }
 
 }
