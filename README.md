@@ -1,5 +1,7 @@
 # Movies 2Look4
-Repositório criado para desenvolvimento do desafio de consumir endpoints da TMDb API. O objetivo deste projeto foi consolidar, em uma aplicação simples, os conceitos de desenvolvimento Android com Kotlin que aprendi através da realização de cursos.
+Repositório criado para desenvolvimento do desafio de consumir endpoints da TMDb API. O objetivo deste projeto foi consolidar, em uma aplicação simples, os conceitos de desenvolvimento Android com Kotlin que aprendi através da realização de cursos. A proposta do aplicativo é retornar a lista dos 20 primeiros filmes mais bem votados do site TMDb. Abaixo, segue uma demonstração de seu funcionamento:
+
+![demo](https://user-images.githubusercontent.com/70399469/127043562-5b16a00f-3a52-4dc0-9cfe-86e11ca3aa10.gif)
 
 # Tecnologias utilizadas
 Abaixo são listadas as principais tecnologias e bibliotecas utilizadas para o desenvolvimento deste projeto:
