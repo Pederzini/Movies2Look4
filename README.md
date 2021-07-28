@@ -11,12 +11,15 @@ Abaixo são listadas as principais tecnologias e bibliotecas utilizadas para o d
 - RxJava 2
 - Gson
 - Glide
+- Coroutines
 
-### Views
+### UI
 - Activity
 - Synthetic 
 - RecyclerView
 - ViewHolder
+- ConstraintLayout e LinearLayout
+- ViewFlipper
 
 ### Arquitetura*
 - MVP
@@ -29,4 +32,4 @@ Abaixo são listadas as principais tecnologias e bibliotecas utilizadas para o d
 - Dagger 2
 - Koin (branch 'mvvm')
 
-\* O projeto foi desenvolvido, inicialmente, seguindo a arquitetura MVP e com injeção de dependências utilizando Dagger 2. Posteriormente, em outra branch ('mvvm'), foi feita a refatoração do código para se adequadar à arquitetura MVVM e adotando injeção de dependências via Koin.
+\* O projeto foi desenvolvido, inicialmente, seguindo a arquitetura MVP e com injeção de dependências utilizando Dagger 2. Posteriormente, em outra branch ('mvvm'), foi feita a refatoração do código para se adequar à arquitetura MVVM e adotando injeção de dependências via Koin.
